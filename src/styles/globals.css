@@ -139,9 +139,13 @@
 }
 
 @utility root {
-  @apply bg-white dark:bg-black m-0 flex h-full w-full flex-col p-0 transition-colors duration-300 ease-in-out;
+  @apply m-0 flex h-full w-full flex-col bg-white p-0 transition-colors duration-300 ease-in-out dark:bg-black;
 }
 
 @utility center {
   @apply flex items-center justify-center;
+}
+
+@utility mobile {
+  @apply hidden lg:block;
 }

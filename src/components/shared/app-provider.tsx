@@ -16,10 +16,8 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
     }
   }, [isDarkMode]);
   return (
-    <div className="text-primary-600 flex min-h-screen w-full">
-      <main className="dark:bg-dark-primary flex w-full flex-col">
-        {children}
-      </main>
+    <div className="flex min-h-screen w-full">
+      <main className="flex w-full flex-col">{children}</main>
     </div>
   );
 };

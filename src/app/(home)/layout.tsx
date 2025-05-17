@@ -1,4 +1,4 @@
-import Header from "@/components/landing/header";
+import Header from "@/features/landing/header";
 import AnnouncementBanner from "@/components/shared/sticky-banner";
 import { generateMetadata } from "@/lib/meta-data";
 import React from "react";

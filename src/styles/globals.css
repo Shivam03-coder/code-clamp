@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
 @custom-variant dark (&:is(.dark *));
 @custom-media dark (prefers-color-scheme: dark);
 
@@ -21,7 +22,7 @@
   }
 }
 
-@theme {
+@theme default {
   --font-sans: var(--font-geist);
   --font-inter: var(--font-inter);
   --font-poppins: var(--font-poppins);
@@ -29,6 +30,7 @@
   --font-manrope: var(--font-manrope);
   --font-space: var(--font-space-grotesk);
   --font-mulish: var(--font-mulish);
+  --drop-shadow-glow: drop-shadow(0 0 10px oklch(0.78 0.22 85 / 0.9));
 }
 
 @theme inline {
@@ -102,6 +104,10 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --glow-react: 0 0 10px oklch(0.78 0.22 85 / 0.9);
+  --glow-tailwind: 0 0 10px oklch(0.6 0.15 200 / 0.9);
+  --glow-framer: 0 0 10px oklch(0.3 0.2 300 / 0.9);
+  --glow-shadcn: 0 0 10px oklch(0.7 0.25 30 / 0.9);
 }
 
 .dark {
@@ -136,6 +142,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --glow: 0 0 10px oklch(0.78 0.22 85 / 0.9);
+  --glow-react: 0 0 10px oklch(0.9 0.15 85 / 0.9);
+  --glow-tailwind: 0 0 10px oklch(0.7 0.15 200 / 0.9);
+  --glow-framer: 0 0 10px oklch(0.4 0.2 300 / 0.9);
+  --glow-shadcn: 0 0 10px oklch(0.8 0.25 30 / 0.9);
 }
 
 @utility root {
@@ -148,4 +159,31 @@
 
 @utility mobile {
   @apply hidden lg:block;
+}
+@layer utilities {
+  .filter-glow-react {
+    filter: drop-shadow(var(--glow-react));
+  }
+  .filter-glow-tailwind {
+    filter: drop-shadow(var(--glow-tailwind));
+  }
+  .filter-glow-framer {
+    filter: drop-shadow(var(--glow-framer));
+  }
+  .filter-glow-shadcn {
+    filter: drop-shadow(var(--glow-shadcn));
+  }
+
+  .hover-glow-react:hover {
+    filter: drop-shadow(var(--glow-react));
+  }
+  .hover-glow-tailwind:hover {
+    filter: drop-shadow(var(--glow-tailwind));
+  }
+  .hover-glow-framer:hover {
+    filter: drop-shadow(var(--glow-framer));
+  }
+  .hover-glow-shadcn:hover {
+    filter: drop-shadow(var(--glow-shadcn));
+  }
 }

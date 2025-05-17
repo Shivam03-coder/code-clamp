@@ -1,8 +1,8 @@
 import React from "react";
-import ThemeToggle from "../shared/theme-toggle";
+import ThemeToggle from "../../components/shared/theme-toggle";
 import { Code, GithubIcon, Tag } from "lucide-react";
 import { Link } from "next-view-transitions";
-import { Badge } from "../ui/badge";
+import { Badge } from "../../components/ui/badge";
 
 const Header = () => {
   return (

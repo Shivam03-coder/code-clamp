@@ -1,10 +1,13 @@
-/**
- * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
- * for Docker builds.
- */
+
 import "./src/env.js";
 
-/** @type {import("next").NextConfig} */
-const config = {};
+import { createMDX } from 'fumadocs-mdx/next';
 
-export default config;
+const withMDX = createMDX();
+
+/** @type {import('next').NextConfig} */
+const config = {
+  reactStrictMode: true,
+};
+
+export default withMDX(config);

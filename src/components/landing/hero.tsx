@@ -23,14 +23,14 @@ const childVariants = {
 const Hero = () => {
   return (
     <motion.div
-      className="text-foreground mx-auto flex min-h-screen w-full max-w-7xl flex-col items-center justify-between gap-3 lg:flex-row"
+      className="text-foreground mx-auto flex min-h-screen lg:py-16 w-full max-w-7xl flex-col justify-between gap-3 lg:flex-row"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <motion.div
         variants={childVariants}
-        className="flex w-full flex-col items-start space-y-8 text-left lg:w-[45%]"
+        className="flex w-full flex-col items-start space-y-8 bg-amber-700 text-left lg:w-[45%]"
       >
         <p className="text-lg leading-relaxed">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eius,

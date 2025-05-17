@@ -4,8 +4,8 @@ export default function Stickybanner() {
   return (
     <div className="relative flex w-full flex-col overflow-y-auto text-sm">
       <StickyBanner className="bg-sidebar-primary">
-        <span className="text-lg">🚀</span>
-        <p className="ml-3 max-w-[90%] text-white drop-shadow-md @md:text-justify">
+        <span className="mobile text-lg">🚀</span>
+        <p className="maxw ml-3 text-white leading-snug py-1 drop-shadow-md lg:max-w-[90%]">
           New components coming soon to our UI library! Stay tuned for updates.
           <a
             href="#"

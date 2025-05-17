@@ -6,8 +6,8 @@ import { Badge } from "../ui/badge";
 
 const Header = () => {
   return (
-    <div className="text-primary sticky top-0 left-0 z-50 mx-auto flex w-full bg-zinc-200 lg:mt-2 lg:w-[85%] lg:rounded-xl dark:bg-zinc-900">
-      <nav className="mx-auto flex flex-1 items-center justify-between rounded-b-3xl px-4 py-3">
+    <div className="text-primary sticky top-0 left-0 z-50 mx-auto flex w-full bg-zinc-200 mt-0 lg:mt-2 lg:w-[85%] lg:rounded-xl dark:bg-zinc-900">
+      <nav className="mx-auto flex flex-1 items-center justify-between rounded-b-3xl px-4  py-3">
         <div className="center gap-4">
           <span className="bg-primary text-card border-primary rounded-xl border p-2">
             <Code size={20} />

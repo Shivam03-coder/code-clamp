@@ -2,10 +2,9 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Link } from "next-view-transitions";
-import LinkButton from "../../components/ui/link-button";
 import { ArrowBigDown, MoveUpRight } from "lucide-react";
 import Featured from "./featured";
+import LinkButton from "@/components/ui/link-button";
 
 const containerVariants = {
   hidden: { opacity: 0 },

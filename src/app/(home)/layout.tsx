@@ -1,7 +1,7 @@
-import Header from "@/features/landing/header";
-import AnnouncementBanner from "@/components/shared/sticky-banner";
+import AnnouncementBanner from "@/components/global/sticky-banner";
 import { generateMetadata } from "@/lib/meta-data";
 import React from "react";
+import Header from "./header";
 
 export const metadata = generateMetadata({
   title: "Home",

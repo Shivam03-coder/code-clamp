@@ -19,4 +19,9 @@ export const FeatureLableData = [
     image: "/shadcn.png",
     dimension: 36,
   },
+  {
+    title: "Next-JS",
+    image: "/nextjs.png",
+    dimension: 36,
+  },
 ];

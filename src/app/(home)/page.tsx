@@ -1,13 +1,9 @@
-"use client"
-import Hero from "@/features/landing/hero";
+"use client";
 import React from "react";
+import Hero from "./hero";
 
 const page = () => {
-  return (
-    <div>
-      <Hero />
-    </div>
-  );
+  return <Hero />;
 };
 
 export default page;

@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeToggle from "../../components/shared/theme-toggle";
+import ThemeToggle from "../../components/global/theme-toggle";
 import { Code, GithubIcon, Tag } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { Badge } from "../../components/ui/badge";

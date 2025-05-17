@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import "@/styles/globals.css";
 import { appfonts } from "@/fonts";
-import AppProvider from "@/components/shared/app-provider";
+import AppProvider from "@/providers/app-provider";
 import { cn } from "@/lib/utils";
 import { RootProvider } from "fumadocs-ui/provider";
 import type { ReactNode } from "react";

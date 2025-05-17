@@ -1,8 +1,20 @@
 // source.config.ts
-import { defineDocs } from "fumadocs-mdx/config";
-var docs = defineDocs({
-  dir: "src/content/docs"
+import {
+  defineCollections,
+  frontmatterSchema,
+  metaSchema
+} from "fumadocs-mdx/config";
+var docs = defineCollections({
+  type: "doc",
+  dir: "src/content/docs",
+  schema: frontmatterSchema
+});
+var meta = defineCollections({
+  type: "meta",
+  dir: "src/content/docs",
+  schema: metaSchema
 });
 export {
-  docs
+  docs,
+  meta
 };

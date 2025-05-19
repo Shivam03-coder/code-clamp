@@ -12,3 +12,5 @@ const source = loader({
     if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
   },
 });
+
+export { source };

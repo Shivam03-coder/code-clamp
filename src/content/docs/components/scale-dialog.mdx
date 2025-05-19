@@ -1,0 +1,174 @@
+---
+title: 🔍 Scale Dialog
+description: A dialog with smooth scale animation
+icon: Maximize
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { ScaleDialog } from "@/components/code-clamp/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+# 🔍 Scale Dialog
+
+A dialog component with a smooth scale animation that grows from the center, built with shadcn/ui and Framer Motion.
+
+<Preview
+  link="scale-dialog"
+  comment={["Animation"]}
+  className="bg-card border rounded-xl p-6 flex justify-center"
+>
+  <ScaleDialog
+    title="Create New Project"
+    description="Add the details for your new project."
+    triggerText="Open Scale Dialog"
+  >
+    <div className="grid gap-4 py-4">
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="project-name" className="text-right">
+          Name
+        </Label>
+        <Input id="project-name" placeholder="Project name" className="col-span-3" />
+      </div>
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="description" className="text-right">
+          Description
+        </Label>
+        <Input id="description" placeholder="Project description" className="col-span-3" />
+      </div>
+    </div>
+  </ScaleDialog>
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Scale Animation
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Grows and shrinks with a natural spring effect
+    </p>
+  </div>
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Combined Opacity
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Fades in while scaling for a smoother appearance
+    </p>
+  </div>
+
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Attention-Grabbing
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      More noticeable than a simple fade for important content
+    </p>
+  </div>
+
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Customizable Timing
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Adjust animation duration to match your needs
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion
+# or
+npm install framer-motion
+# or
+yarn add framer-motion
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { ScaleDialog } from "@/components/ui/animated-dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export default function MyComponent() {
+  return (
+    <ScaleDialog
+      title="Create New Project"
+      description="Add the details for your new project."
+      triggerText="New Project"
+      confirmText="Create"
+      cancelText="Cancel"
+      onConfirm={() => {
+        // Handle project creation
+        console.log("Project created!");
+      }}
+    >
+      <div className="grid gap-4 py-4">
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="project-name" className="text-right">
+            Name
+          </Label>
+          <Input id="project-name" placeholder="Project name" className="col-span-3" />
+        </div>
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="description" className="text-right">
+            Description
+          </Label>
+          <Input id="description" placeholder="Project description" className="col-span-3" />
+        </div>
+      </div>
+    </ScaleDialog>
+  );
+}
+\`\`\` */}
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `React.ReactNode` | `undefined` | Dialog title |
+| `description` | `React.ReactNode` | `undefined` | Dialog description |
+| `children` | `React.ReactNode` | `required` | Dialog content |
+| `triggerText` | `string` | `"Open Dialog"` | Text for the trigger button |
+| `confirmText` | `string` | `"Confirm"` | Text for the confirm button |
+| `cancelText` | `string` | `"Cancel"` | Text for the cancel button |
+| `onConfirm` | `() => void` | `undefined` | Function called when confirm button is clicked |
+| `showFooter` | `boolean` | `true` | Whether to show the dialog footer with buttons |
+| `className` | `string` | `undefined` | Additional CSS classes for the dialog |
+| `duration` | `number` | `0.3` | Animation duration in seconds |
+
+## 🎨 Customization
+
+You can customize the scale dialog to match your design needs:
+
+{/* \`\`\`tsx
+<ScaleDialog
+  // Custom button text
+  triggerText="Add Item"
+  confirmText="Add"
+  cancelText="Cancel"
+  
+  // Custom styling
+  className="max-w-md bg-opacity-95"
+  
+  // Faster animation
+  duration={0.2}
+  
+  // Control the dialog programmatically
+  open={isOpen}
+  onOpenChange={setIsOpen}
+/>
+\`\`\` */}
+
+The Scale Dialog is perfect for creating new items, showing important alerts, or any situation where you want to draw attention to the dialog content.
+\`\`\`
+\`\`\`

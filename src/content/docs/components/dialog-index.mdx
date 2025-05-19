@@ -1,0 +1,252 @@
+---
+title: Animated Dialog Components
+description: A collection of animated dialog components for your Next.js application
+icon: Square
+---
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  FadeDialog,
+  ScaleDialog,
+  SlideDialog,
+  FlipDialog,
+  DrawerDialog
+} from "@/components/code-clamp/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+# Animated Dialog Components
+
+A collection of animated, customizable dialog components for your Next.js application, built with shadcn/ui and Framer Motion.
+
+<Tabs defaultValue="fade" className="w-full mt-6">
+  <TabsList className="grid w-full grid-cols-5">
+    <TabsTrigger value="fade">Fade</TabsTrigger>
+    <TabsTrigger value="scale">Scale</TabsTrigger>
+    <TabsTrigger value="slide">Slide</TabsTrigger>
+    <TabsTrigger value="flip">Flip</TabsTrigger>
+    <TabsTrigger value="drawer">Drawer</TabsTrigger>
+  </TabsList>
+  
+  <TabsContent value="fade" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Fade Dialog</CardTitle>
+        <CardDescription>A simple dialog with fade animation</CardDescription>
+      </CardHeader>
+      <CardContent className="flex justify-center py-4">
+        <FadeDialog
+          title="Edit Profile"
+          description="Make changes to your profile here."
+          triggerText="Open Fade Dialog"
+        >
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="name" className="text-right">
+                Name
+              </Label>
+              <Input id="name" defaultValue="John Doe" className="col-span-3" />
+            </div>
+          </div>
+        </FadeDialog>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/fade-dialog" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  
+  <TabsContent value="scale" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Scale Dialog</CardTitle>
+        <CardDescription>A dialog with scale animation</CardDescription>
+      </CardHeader>
+      <CardContent className="flex justify-center py-4">
+        <ScaleDialog
+          title="Create New Project"
+          description="Add the details for your new project."
+          triggerText="Open Scale Dialog"
+        >
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="project-name" className="text-right">
+                Name
+              </Label>
+              <Input id="project-name" placeholder="Project name" className="col-span-3" />
+            </div>
+          </div>
+        </ScaleDialog>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/scale-dialog" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  
+  <TabsContent value="slide" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Slide Dialog</CardTitle>
+        <CardDescription>A dialog with slide animation from different directions</CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-wrap justify-center gap-4 py-4">
+        <SlideDialog
+          title="Slide Up Dialog"
+          description="This dialog slides up from the bottom."
+          triggerText="Slide Up"
+          direction="up"
+        >
+          <p>This dialog slides up from the bottom of the screen.</p>
+        </SlideDialog>
+        
+        <SlideDialog
+          title="Slide Down Dialog"
+          description="This dialog slides down from the top."
+          triggerText="Slide Down"
+          direction="down"
+        >
+          <p>This dialog slides down from the top of the screen.</p>
+        </SlideDialog>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/slide-dialog" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  
+  <TabsContent value="flip" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Flip Dialog</CardTitle>
+        <CardDescription>A dialog with 3D flip animation</CardDescription>
+      </CardHeader>
+      <CardContent className="flex justify-center py-4">
+        <FlipDialog
+          title="Subscription Plan"
+          description="Choose a subscription plan for your account."
+          triggerText="Open Flip Dialog"
+        >
+          <div className="grid gap-4 py-4">
+            <div className="rounded-lg border p-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-medium">Basic Plan</h4>
+                  <p className="text-sm text-muted-foreground">$10/month</p>
+                </div>
+                <Button variant="outline" size="sm">Select</Button>
+              </div>
+            </div>
+          </div>
+        </FlipDialog>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/flip-dialog" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  
+  <TabsContent value="drawer" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Drawer Dialog</CardTitle>
+        <CardDescription>A dialog that slides in from the edge of the screen</CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-wrap justify-center gap-4 py-4">
+        <DrawerDialog
+          title="Right Drawer"
+          description="This drawer slides in from the right."
+          triggerText="Right Drawer"
+          side="right"
+        >
+          <div className="grid gap-4">
+            <div className="rounded-lg border p-3">
+              <h4 className="font-medium">Notifications</h4>
+              <p className="text-sm text-muted-foreground">You have 3 unread messages</p>
+            </div>
+          </div>
+        </DrawerDialog>
+        
+        <DrawerDialog
+          title="Bottom Drawer"
+          description="This drawer slides up from the bottom."
+          triggerText="Bottom Drawer"
+          side="bottom"
+        >
+          <div className="grid gap-4">
+            <div className="rounded-lg border p-3">
+              <h4 className="font-medium">Quick Actions</h4>
+              <div className="mt-2 flex gap-2">
+                <Button size="sm">Share</Button>
+                <Button size="sm" variant="outline">Save</Button>
+              </div>
+            </div>
+          </div>
+        </DrawerDialog>
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/drawer-dialog" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+</Tabs>
+
+## Installation
+
+All dialog components are available in the `@/components/ui/animated-dialog` directory. To use them, you'll need to install the required dependencies:
+
+\`\`\`bash
+# Install Framer Motion
+npm install framer-motion
+# or
+yarn add framer-motion
+# or
+bun add framer-motion
+\`\`\`
+
+## Usage
+
+Import the desired dialog component:
+
+{/* \`\`\`tsx
+import { FadeDialog } from "@/components/ui/animated-dialog";
+// or
+import { ScaleDialog } from "@/components/ui/animated-dialog";
+// or
+import { SlideDialog } from "@/components/ui/animated-dialog";
+// or
+import { FlipDialog } from "@/components/ui/animated-dialog";
+// or
+import { DrawerDialog } from "@/components/ui/animated-dialog";
+\`\`\` */}
+
+Then use it in your component:
+
+{/* \`\`\`tsx
+export default function MyComponent() {
+  return (
+    <FadeDialog
+      title="Dialog Title"
+      description="Dialog description goes here."
+      triggerText="Open Dialog"
+      onConfirm={() => {
+        // Handle confirmation
+        console.log("Confirmed!");
+      }}
+    >
+      <p>Your dialog content goes here.</p>
+    </FadeDialog>
+  );
+}
+\`\`\` */}
+
+For more detailed documentation on each component, visit their individual pages:
+
+- [Fade Dialog](/docs/components/fade-dialog)
+- [Scale Dialog](/docs/components/scale-dialog)
+- [Slide Dialog](/docs/components/slide-dialog)
+- [Flip Dialog](/docs/components/flip-dialog)
+- [Drawer Dialog](/docs/components/drawer-dialog)
+\`\`\`

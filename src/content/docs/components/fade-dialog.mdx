@@ -1,0 +1,173 @@
+---
+title: 🌟 Fade Dialog
+description: A simple dialog with smooth fade animation
+icon: Square
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { FadeDialog } from "@/components/code-clamp/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+# 🌟 Fade Dialog
+
+A simple dialog component with a smooth fade animation, built on top of shadcn/ui Dialog and Framer Motion.
+
+<Preview
+  link="fade-dialog"
+  comment={["Animation"]}
+  className="bg-card border rounded-xl p-6 flex justify-center"
+>
+  <FadeDialog
+    title="Edit Profile"
+    description="Make changes to your profile here. Click save when you're done."
+    triggerText="Open Fade Dialog"
+  >
+    <div className="grid gap-4 py-4">
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="name" className="text-right">
+          Name
+        </Label>
+        <Input id="name" defaultValue="John Doe" className="col-span-3" />
+      </div>
+      <div className="grid grid-cols-4 items-center gap-4">
+        <Label htmlFor="username" className="text-right">
+          Username
+        </Label>
+        <Input id="username" defaultValue="@johndoe" className="col-span-3" />
+      </div>
+    </div>
+  </FadeDialog>
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 rounded-lg border bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Smooth Fade Animation
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Clean fade in/out transition for a subtle effect
+    </p>
+  </div>
+  <div className="p-4 rounded-lg border bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Customizable Duration
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Adjust animation speed to match your preferences
+    </p>
+  </div>
+
+  <div className="p-4 rounded-lg border bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Accessible
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Built on shadcn/ui Dialog with full accessibility support
+    </p>
+  </div>
+
+  <div className="p-4 rounded-lg border bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Flexible Content
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Supports any content including forms, text, and media
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion
+# or
+npm install framer-motion
+# or
+yarn add framer-motion
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { FadeDialog } from "@/components/ui/animated-dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export default function MyComponent() {
+  return (
+    <FadeDialog
+      title="Edit Profile"
+      description="Make changes to your profile here. Click save when you're done."
+      triggerText="Open Dialog"
+      confirmText="Save changes"
+      cancelText="Cancel"
+      onConfirm={() => {
+        // Handle confirmation
+        console.log("Confirmed!");
+      }}
+    >
+      <div className="grid gap-4 py-4">
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="name" className="text-right">
+            Name
+          </Label>
+          <Input id="name" defaultValue="John Doe" className="col-span-3" />
+        </div>
+        <div className="grid grid-cols-4 items-center gap-4">
+          <Label htmlFor="username" className="text-right">
+            Username
+          </Label>
+          <Input id="username" defaultValue="@johndoe" className="col-span-3" />
+        </div>
+      </div>
+    </FadeDialog>
+  );
+}
+\`\`\` */}
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `React.ReactNode` | `undefined` | Dialog title |
+| `description` | `React.ReactNode` | `undefined` | Dialog description |
+| `children` | `React.ReactNode` | `required` | Dialog content |
+| `triggerText` | `string` | `"Open Dialog"` | Text for the trigger button |
+| `confirmText` | `string` | `"Confirm"` | Text for the confirm button |
+| `cancelText` | `string` | `"Cancel"` | Text for the cancel button |
+| `onConfirm` | `() => void` | `undefined` | Function called when confirm button is clicked |
+| `showFooter` | `boolean` | `true` | Whether to show the dialog footer with buttons |
+| `className` | `string` | `undefined` | Additional CSS classes for the dialog |
+| `duration` | `number` | `0.2` | Animation duration in seconds |
+
+## 🎨 Customization
+
+You can customize the dialog appearance and behavior:
+
+{/* \`\`\`tsx
+<FadeDialog
+  // Custom button text
+  triggerText="Edit Profile"
+  confirmText="Save Changes"
+  cancelText="Discard"
+  
+  // Hide footer if not needed
+  showFooter={false}
+  
+  // Custom styling
+  className="max-w-lg"
+  
+  // Custom animation duration
+  duration={0.3}
+/>
+\`\`\` */}
+
+The Fade Dialog is perfect for most use cases where you want a simple, clean animation that doesn't distract from your content.
+\`\`\`
+\`\`\`

@@ -1,0 +1,184 @@
+---
+title: 📱 Drawer Dialog
+description: A dialog that slides in from the edge of the screen
+icon: PanelRight
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { DrawerDialog } from "@/components/code-clamp/dialog";
+import { Button } from "@/components/ui/button";
+
+# 📱 Drawer Dialog
+
+A dialog component that slides in from any edge of the screen, similar to a mobile drawer or sidebar.
+
+<Preview
+  link="drawer-dialog"
+  comment={["Drawer"]}
+  className="bg-card border rounded-xl p-6 flex flex-wrap justify-center gap-4"
+>
+  <DrawerDialog
+    title="Right Drawer"
+    description="This drawer slides in from the right."
+    triggerText="Right Drawer"
+    side="right"
+  >
+    <div className="grid gap-4">
+      <div className="rounded-lg border p-3">
+        <h4 className="font-medium">Notifications</h4>
+        <p className="text-sm text-muted-foreground">You have 3 unread messages</p>
+      </div>
+      <div className="rounded-lg border p-3">
+        <h4 className="font-medium">Recent Activity</h4>
+        <p className="text-sm text-muted-foreground">Last login: 2 hours ago</p>
+      </div>
+    </div>
+  </DrawerDialog>
+  
+  <DrawerDialog
+    title="Bottom Drawer"
+    description="This drawer slides up from the bottom."
+    triggerText="Bottom Drawer"
+    side="bottom"
+  >
+    <div className="grid gap-4">
+      <div className="rounded-lg border p-3">
+        <h4 className="font-medium">Quick Actions</h4>
+        <div className="mt-2 flex gap-2">
+          <Button size="sm">Share</Button>
+          <Button size="sm" variant="outline">Save</Button>
+          <Button size="sm" variant="outline">Print</Button>
+        </div>
+      </div>
+    </div>
+  </DrawerDialog>
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+   <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Multi-directional
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Slides in from any side: top, right, bottom, or left
+    </p>
+  </div>
+   <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Mobile-Friendly
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Perfect for responsive designs and mobile interfaces
+    </p>
+  </div>
+
+   <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Full-Height Options
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Side drawers take full height for maximum content space
+    </p>
+  </div>
+
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Smooth Animation
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Natural easing for a polished user experience
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion lucide-react
+# or
+npm install framer-motion lucide-react
+# or
+yarn add framer-motion lucide-react
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { DrawerDialog } from "@/components/ui/animated-dialog";
+import { Button } from "@/components/ui/button";
+
+export default function MyComponent() {
+  return (
+    <div className="flex gap-4">
+      <DrawerDialog
+        title="Navigation"
+        description="Main menu"
+        triggerText="Open Menu"
+        side="left"
+      >
+        <div className="grid gap-2">
+          <Button variant="ghost" className="justify-start">Dashboard</Button>
+          <Button variant="ghost" className="justify-start">Profile</Button>
+          <Button variant="ghost" className="justify-start">Settings</Button>
+          <Button variant="ghost" className="justify-start">Help</Button>
+        </div>
+      </DrawerDialog>
+      
+      <DrawerDialog
+        title="Quick Actions"
+        description="Frequently used tools"
+        triggerText="Actions"
+        side="bottom"
+        showCloseButton={true}
+      >
+        <div className="flex flex-wrap gap-2">
+          <Button size="sm">Share</Button>
+          <Button size="sm" variant="outline">Save</Button>
+          <Button size="sm" variant="outline">Export</Button>
+          <Button size="sm" variant="outline">Print</Button>
+        </div>
+      </DrawerDialog>
+    </div>
+  );
+}
+\`\`\` */}
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `React.ReactNode` | `undefined` | Drawer title |
+| `description` | `React.ReactNode` | `undefined` | Drawer description |
+| `children` | `React.ReactNode` | `required` | Drawer content |
+| `triggerText` | `string` | `"Open Drawer"` | Text for the trigger button |
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"right"` | Side from which the drawer appears |
+| `open` | `boolean` | `undefined` | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Function called when open state changes |
+| `className` | `string` | `undefined` | Additional CSS classes for the drawer |
+| `showCloseButton` | `boolean` | `true` | Whether to show the close button in the corner |
+
+## 🎨 Side Options
+
+Choose from four sides to match your UI needs:
+{/* 
+\`\`\`tsx
+// Right drawer (good for notifications, details panels)
+<DrawerDialog side="right" />
+
+// Left drawer (good for navigation, filters)
+<DrawerDialog side="left" />
+
+// Bottom drawer (good for mobile actions, keyboards)
+<DrawerDialog side="bottom" />
+
+// Top drawer (good for alerts, banners)
+<DrawerDialog side="top" />
+\`\`\` */}
+
+The Drawer Dialog is perfect for creating sidebars, navigation menus, detail panels, or any situation where you need to display additional content without leaving the current page.
+\`\`\`

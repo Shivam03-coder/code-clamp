@@ -1,0 +1,162 @@
+---
+title: 🔄 Slide Dialog
+description: A dialog with directional slide animations
+icon: MoveHorizontal
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { SlideDialog } from "@/components/code-clamp/dialog";
+
+# 🔄 Slide Dialog
+
+A dialog component with directional slide animations, allowing content to enter from any side of the screen.
+
+<Preview
+  link="slide-dialog"
+  comment={["Animation"]}
+  className="bg-card border rounded-xl p-6 flex flex-wrap justify-center gap-4"
+>
+  <SlideDialog
+    title="Slide Up Dialog"
+    description="This dialog slides up from the bottom."
+    triggerText="Slide Up"
+    direction="up"
+  >
+    <p>This dialog slides up from the bottom of the screen.</p>
+  </SlideDialog>
+  
+  <SlideDialog
+    title="Slide Down Dialog"
+    description="This dialog slides down from the top."
+    triggerText="Slide Down"
+    direction="down"
+  >
+    <p>This dialog slides down from the top of the screen.</p>
+  </SlideDialog>
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Directional Animation
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Slide from any direction: up, down, left, or right
+    </p>
+  </div>
+    <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Spatial Context
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Provides visual cues about where content is coming from
+    </p>
+  </div>
+
+    <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Combined Fade Effect
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Slides with opacity changes for smoother transitions
+    </p>
+  </div>
+
+    <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Customizable Distance
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Subtle movement that doesn't overwhelm the user
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion
+# or
+npm install framer-motion
+# or
+yarn add framer-motion
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { SlideDialog } from "@/components/ui/animated-dialog";
+
+export default function MyComponent() {
+  return (
+    <div className="flex gap-4">
+      <SlideDialog
+        title="Notification"
+        description="You have a new message."
+        triggerText="Slide Up"
+        direction="up"
+        confirmText="Mark as Read"
+        cancelText="Dismiss"
+        onConfirm={() => {
+          console.log("Marked as read");
+        }}
+      >
+        <p>John Doe sent you a message regarding your recent order.</p>
+      </SlideDialog>
+      
+      <SlideDialog
+        title="Settings Updated"
+        description="Your settings have been saved."
+        triggerText="Slide Down"
+        direction="down"
+        showFooter={false}
+      >
+        <p>Your preference changes have been applied successfully.</p>
+      </SlideDialog>
+    </div>
+  );
+}
+\`\`\` */}
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `React.ReactNode` | `undefined` | Dialog title |
+| `description` | `React.ReactNode` | `undefined` | Dialog description |
+| `children` | `React.ReactNode` | `required` | Dialog content |
+| `triggerText` | `string` | `"Open Dialog"` | Text for the trigger button |
+| `confirmText` | `string` | `"Confirm"` | Text for the confirm button |
+| `cancelText` | `string` | `"Cancel"` | Text for the cancel button |
+| `onConfirm` | `() => void` | `undefined` | Function called when confirm button is clicked |
+| `showFooter` | `boolean` | `true` | Whether to show the dialog footer with buttons |
+| `direction` | `"up" \| "down" \| "left" \| "right"` | `"up"` | Direction from which the dialog slides in |
+| `className` | `string` | `undefined` | Additional CSS classes for the dialog |
+| `duration` | `number` | `0.3` | Animation duration in seconds |
+
+## 🎨 Direction Options
+
+Choose from four slide directions to match your UI context:
+
+{/* \`\`\`tsx
+// Slide up from bottom (good for notifications, toasts)
+<SlideDialog direction="up" />
+
+// Slide down from top (good for alerts, banners)
+<SlideDialog direction="down" />
+
+// Slide in from right (good for related content)
+<SlideDialog direction="left" />
+
+// Slide in from left (good for navigation, menus)
+<SlideDialog direction="right" />
+\`\`\` */}
+
+The Slide Dialog is perfect for creating contextual animations that hint at where content is coming from or going to, providing better spatial awareness for users.
+\`\`\`
+\`\`\`

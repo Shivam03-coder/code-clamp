@@ -1,0 +1,180 @@
+---
+title: 🔄 Flip Dialog
+description: A dialog with 3D flip animation
+icon: Rotate3d
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { FlipDialog } from "@/components/code-clamp/dialog";
+import { Button } from "@/components/ui/button";
+
+# 🔄 Flip Dialog
+
+A dialog component with an eye-catching 3D flip animation that rotates into view.
+
+<Preview
+  link="flip-dialog"
+  comment={["3D"]}
+  className="bg-card border rounded-xl p-6 flex justify-center"
+>
+  <FlipDialog
+    title="Subscription Plan"
+    description="Choose a subscription plan for your account."
+    triggerText="Open Flip Dialog"
+  >
+    <div className="grid gap-4 py-4">
+      <div className="rounded-lg border p-3">
+        <div className="flex items-center justify-between">
+          <div>
+            <h4 className="font-medium">Basic Plan</h4>
+            <p className="text-sm text-muted-foreground">$10/month</p>
+          </div>
+          <Button variant="outline" size="sm">Select</Button>
+        </div>
+      </div>
+      <div className="rounded-lg border p-3">
+        <div className="flex items-center justify-between">
+          <div>
+            <h4 className="font-medium">Pro Plan</h4>
+            <p className="text-sm text-muted-foreground">$20/month</p>
+          </div>
+          <Button variant="outline" size="sm">Select</Button>
+        </div>
+      </div>
+    </div>
+  </FlipDialog>
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 rounded-lg border bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> 3D Rotation
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Dramatic flip animation with perspective effect
+    </p>
+  </div>
+   <div className="p-4 rounded-lg border bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Attention-Grabbing
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Perfect for important content that needs focus
+    </p>
+  </div>
+
+   <div className="p-4 rounded-lg border bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Smooth Transitions
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Combined opacity changes for natural appearance
+    </p>
+  </div>
+
+   <div className="p-4 rounded-lg border bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Adjustable Speed
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Customize animation duration to match your needs
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion
+# or
+npm install framer-motion
+# or
+yarn add framer-motion
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { FlipDialog } from "@/components/ui/animated-dialog";
+import { Button } from "@/components/ui/button";
+
+export default function MyComponent() {
+  return (
+    <FlipDialog
+      title="Subscription Plan"
+      description="Choose a subscription plan for your account."
+      triggerText="View Plans"
+      confirmText="Continue"
+      cancelText="Cancel"
+    >
+      <div className="grid gap-4 py-4">
+        <div className="rounded-lg border p-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-medium">Basic Plan</h4>
+              <p className="text-sm text-muted-foreground">$10/month</p>
+            </div>
+            <Button variant="outline" size="sm">Select</Button>
+          </div>
+        </div>
+        <div className="rounded-lg border p-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-medium">Pro Plan</h4>
+              <p className="text-sm text-muted-foreground">$20/month</p>
+            </div>
+            <Button variant="outline" size="sm">Select</Button>
+          </div>
+        </div>
+      </div>
+    </FlipDialog>
+  );
+}
+\`\`\` */}
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `title` | `React.ReactNode` | `undefined` | Dialog title |
+| `description` | `React.ReactNode` | `undefined` | Dialog description |
+| `children` | `React.ReactNode` | `required` | Dialog content |
+| `triggerText` | `string` | `"Open Dialog"` | Text for the trigger button |
+| `confirmText` | `string` | `"Confirm"` | Text for the confirm button |
+| `cancelText` | `string` | `"Cancel"` | Text for the cancel button |
+| `onConfirm` | `() => void` | `undefined` | Function called when confirm button is clicked |
+| `showFooter` | `boolean` | `true` | Whether to show the dialog footer with buttons |
+| `className` | `string` | `undefined` | Additional CSS classes for the dialog |
+| `duration` | `number` | `0.4` | Animation duration in seconds |
+
+## 🎨 Customization
+
+You can customize the flip animation to match your design needs:
+
+{/* \`\`\`tsx
+<FlipDialog
+  // Custom button text
+  triggerText="Show Offers"
+  confirmText="Apply"
+  cancelText="No Thanks"
+  
+  // Custom styling
+  className="max-w-md"
+  
+  // Adjust animation speed
+  duration={0.5}
+  
+  // Control the dialog programmatically
+  open={isOpen}
+  onOpenChange={setIsOpen}
+/>
+\`\`\` */}
+
+The Flip Dialog is perfect for promotional content, special offers, feature highlights, or any situation where you want to create a memorable and engaging user experience.
+\`\`\`
+\`\`\`

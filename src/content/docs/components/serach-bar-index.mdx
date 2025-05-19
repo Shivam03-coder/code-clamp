@@ -1,0 +1,179 @@
+---
+title: Search Bars
+description: A collection of customizable search bar components for your Next.js application
+icon: Search
+---
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import SearchBarCards from "@/components/global/sub-cards";
+import { ActionSearchbar, ColorfulSearchbar, DropdownSearchbar, FilterSearchbar, MinimalSearchbar } from '@/components/code-clamp/search-bar';
+
+
+# Search Bar Components
+
+A collection of customizable, animated search bar components for your application.
+
+<Tabs defaultValue="action" className="w-full mt-6">
+  <TabsList className="grid w-full grid-cols-4">
+    <TabsTrigger value="action">Action</TabsTrigger>
+    <TabsTrigger value="dropdown">Dropdown</TabsTrigger>
+    <TabsTrigger value="colorful">Colorful</TabsTrigger>
+    <TabsTrigger value="filter">Filter</TabsTrigger>
+  </TabsList>
+  
+ 
+  <TabsContent value="dropdown" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Dropdown Search Bar</CardTitle>
+        <CardDescription>Search with intelligent suggestions</CardDescription>
+      </CardHeader>
+      <CardContent className="flex justify-center py-4">
+        <DropdownSearchbar 
+          suggestions={[
+            "React hooks",
+            "Next.js tutorial",
+            "Tailwind CSS",
+            "Framer Motion animations",
+            "TypeScript basics"
+          ]} 
+        />
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/dropdown-search-bar" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  <TabsContent value="colorful" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Colorful Search Bar</CardTitle>
+        <CardDescription>Customizable color schemes to match your brand</CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-wrap justify-center gap-4 py-4">
+        <ColorfulSearchbar colorScheme="blue" />
+        <ColorfulSearchbar colorScheme="purple" />
+        <ColorfulSearchbar colorScheme="green" />
+        <ColorfulSearchbar colorScheme="amber" />
+        <ColorfulSearchbar colorScheme="rose" />
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/colorful-search-bar" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  <TabsContent value="action" className="mt-4">
+
+    <Card>
+      <CardHeader>
+        <CardTitle>Action Search Bar</CardTitle>
+        <CardDescription>Search using text recognition</CardDescription>
+      </CardHeader>
+      <CardContent className="flex justify-center py-4">
+        <ActionSearchbar />
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/voice-search-bar" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+  <TabsContent value="filter" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Filter Search Bar</CardTitle>
+        <CardDescription>Advanced search with category filtering</CardDescription>
+      </CardHeader>
+      <CardContent className="flex justify-center py-4">
+        <FilterSearchbar 
+          filterOptions={[
+            { id: "articles", label: "Articles" },
+            { id: "videos", label: "Videos" },
+            { id: "tutorials", label: "Tutorials" },
+            { id: "docs", label: "Documentation" },
+            { id: "code", label: "Code examples" }
+          ]} 
+        />
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <a href="/docs/components/filter-search-bar" className="text-sm text-blue-500 hover:underline">View Documentation</a>
+      </CardFooter>
+    </Card>
+  </TabsContent>
+</Tabs>
+
+## 📦 Installation
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 border rounded-lg bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Core Dependencies
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Required for all search bar components
+    </p>
+    <pre className="mt-3 p-3 bg-muted rounded-md text-sm">
+      <code>bun add lucide-react</code>
+    </pre>
+  </div>
+
+  <div className="p-4 border rounded-lg bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Animation Support
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Required for animated components
+    </p>
+    <pre className="mt-3 p-3 bg-muted rounded-md text-sm">
+      <code>bun add framer-motion</code>
+    </pre>
+  </div>
+</div>
+
+## 🛠️ Usage
+
+<div className="grid grid-cols-1 gap-4 mt-6">
+  <div className="p-4 border rounded-lg bg-card">
+    <h3 className="font-semibold mb-3">Import Components</h3>
+    <Tabs items={["Minimal", "Dropdown", "Colorful", "Action", "Filter"]}>
+      <pre className="p-3 bg-muted rounded-md text-sm">
+        <code>import {"{MinimalSearchbar}"} from "@/components/code-clamp/search-bar";</code>
+      </pre>
+      <pre className="p-3 bg-muted rounded-md text-sm">
+        <code>import {"{DropdownSearchbar}"} from "@/components/code-clamp/search-bar";</code>
+      </pre>
+      <pre className="p-3 bg-muted rounded-md text-sm">
+        <code>import {"{ColorfulSearchbar}"} from "@/components/code-clamp/search-bar";</code>
+      </pre>
+      <pre className="p-3 bg-muted rounded-md text-sm">
+        <code>import {"{ActionSearchbar}"} from "@/components/code-clamp/search-bar";</code>
+      </pre>
+      <pre className="p-3 bg-muted rounded-md text-sm">
+        <code>import {"{FilterSearchbar}"} from "@/components/code-clamp/search-bar";</code>
+      </pre>
+    </Tabs>
+  </div>
+
+  <div className="p-4 border rounded-lg bg-card">
+    <h3 className="font-semibold mb-3">Basic Implementation</h3>
+    <pre className="p-3 bg-muted rounded-md text-sm">
+      <code>{`function SearchExample() {
+  const handleSearch = (query) => {
+    console.log("Searching for:", query);
+  };
+
+  return (
+    <ColorfulSearchbar 
+      onSearch={handleSearch}
+      colorScheme="purple"
+    />
+  );
+}`}
+      </code>
+    </pre>
+  </div>
+</div>
+
+## 🔍 Component Guides
+
+<SearchBarCards/>

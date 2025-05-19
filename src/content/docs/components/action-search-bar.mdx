@@ -1,0 +1,69 @@
+---
+title: " > Action Search Bar"
+description: Beautiful animated search component with Framer Motion integration
+icon: Search
+full: true
+---
+
+
+import { Preview } from "@/components/mdx/preview";
+import { ActionSearchbar } from "@/components/code-clamp/search-bar";
+
+# 🔍 Action Search Bar
+
+A sleek, animated search bar with smooth transitions and interactive feedback powered by Framer Motion.
+
+<Preview
+  link="action-search-bar"
+  comment={["Motion"]}
+  className="bg-card border rounded-xl p-6"
+>
+  <ActionSearchbar />
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Smooth Animations
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Spring-powered expand/collapse with natural motion physics
+    </p>
+  </div>
+<div className="p-4 rounded-lg border  bg-card">
+  <h3 className="flex items-center gap-2 font-semibold">
+    <span className="text-primary">•</span> Keyboard Ready
+  </h3>
+  <p className="text-muted-foreground mt-2 text-sm">
+    Supports Enter to search and Escape to collapse
+  </p>
+</div>
+
+<div className="p-4 rounded-lg border  bg-card">
+  <h3 className="flex items-center gap-2 font-semibold">
+    <span className="text-primary">•</span> Micro-interactions
+  </h3>
+  <p className="text-muted-foreground mt-2 text-sm">
+    Subtle hover and tap effects for delightful UX
+  </p>
+</div>
+
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Fully Customizable
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Adjust animations and styles to match your brand
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+```bash
+bun add lucide-react framer-motion @radix-ui/react-slot
+```

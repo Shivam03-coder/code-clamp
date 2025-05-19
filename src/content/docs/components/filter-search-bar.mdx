@@ -1,0 +1,124 @@
+---
+title: " > Filter Search Bar"
+description: Advanced search component with integrated filtering capabilities
+icon: SlidersHorizontal 
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { FilterSearchbar  } from "@/components/code-clamp/search-bar";
+
+# 🔍 Filter Search Bar
+
+A powerful search bar that combines text search with category filtering for refined results.
+
+<Preview
+  link="filter-search-bar"
+  comment={["Filtering"]}
+  className="bg-card border rounded-xl p-6"
+>
+  <FilterSearchbar 
+    filterOptions={[
+      { id: "articles", label: "Articles" },
+      { id: "videos", label: "Videos" },
+      { id: "tutorials", label: "Tutorials" },
+      { id: "docs", label: "Documentation" },
+      { id: "code", label: "Code examples" }
+    ]} 
+  />
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Category Filters
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Filter search results by multiple categories
+    </p>
+  </div>
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Filter Chips
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Visual indicators of active filters with one-click removal
+    </p>
+  </div>
+
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Popover Interface
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Clean, accessible filter selection with checkbox controls
+    </p>
+  </div>
+
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Combined Search
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Search by text and filters simultaneously for precise results
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion lucide-react
+# or
+npm install framer-motion lucide-react
+# or
+yarn add framer-motion lucide-react
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { FilterSearchbar } from "@/components/search-bar";
+
+export default function MyComponent() {
+  const filterOptions = [
+    { id: "articles", label: "Articles" },
+    { id: "videos", label: "Videos" },
+    { id: "tutorials", label: "Tutorials" },
+    { id: "docs", label: "Documentation" },
+    { id: "code", label: "Code examples" }
+  ];
+
+  const handleSearch = (query, filters) => {
+    console.log("Search query:", query);
+    console.log("Active filters:", filters);
+    // Handle search and filtering logic here
+  };
+
+  return (
+    <FilterSearchbar 
+      onSearch={handleSearch} 
+      filterOptions={filterOptions} 
+      placeholder="Search with filters..." 
+    />
+  );
+}
+\`\`\` */}
+
+## 🔄 Filter Options Format
+
+The `filterOptions` prop accepts an array of objects with the following structure:
+
+{/* \`\`\`tsx
+type FilterOption = {
+  id: string;    // Unique identifier for the filter
+  label: string; // Display name shown in the UI
+}
+\`\`\`
+
+You can customize these options to match your application's content categories.
+\`\`\` */}

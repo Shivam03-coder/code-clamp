@@ -216,7 +216,7 @@ export default function PreviewContent({
                   size="sm"
                   disabled={isPending}
                   className={cn(
-                    "relative overflow-hidden",
+                    "relative overflow-hidden ",
                     "h-7 px-3 text-xs font-medium",
                     "bg-black dark:bg-white",
                     "text-white dark:text-black",

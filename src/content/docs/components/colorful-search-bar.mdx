@@ -1,0 +1,83 @@
+---
+title: " > Colorful Search Bar"
+description: Customizable search component with vibrant color schemes
+icon: Palette
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { ColorfulSearchbar } from "@/components/code-clamp/search-bar";
+
+
+A visually striking search bar with customizable color schemes to match your brand identity.
+
+<Preview
+  link="colorful-search-bar"
+  comment={["Colorful"]}
+  className="bg-card border rounded-xl p-6 space-x-1  gap-4"
+>
+  <ColorfulSearchbar colorScheme="blue" />
+  <ColorfulSearchbar colorScheme="purple" />
+  <ColorfulSearchbar colorScheme="green" />
+  <ColorfulSearchbar colorScheme="amber" />
+  <ColorfulSearchbar colorScheme="rose" />
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Color Schemes
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Multiple pre-defined color options to choose from
+    </p>
+  </div>
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Smooth Animations
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Spring-powered expand/collapse with natural motion physics
+    </p>
+  </div>
+
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Custom Styling
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Tailored button and input styles for each color scheme
+    </p>
+  </div>
+
+  <div className="p-4  border rounded-lg bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Brand Consistency
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Easily match your application's color palette
+    </p>
+  </div>
+</div>
+
+## 🧩 Usage
+
+```tsx
+import { ColorfulSearchbar } from "@/components/search-bar";
+
+export default function MyComponent() {
+  const handleSearch = (query) => {
+    console.log("Searching for:", query);
+    // Handle search logic here
+  };
+
+  return (
+    <ColorfulSearchbar 
+      onSearch={handleSearch} 
+      colorScheme="purple"
+    />
+  );
+}
+

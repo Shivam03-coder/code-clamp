@@ -1,0 +1,108 @@
+---
+title:  " > Dropdown Search Bar"
+description: Animated search component with suggestions dropdown
+icon: Search
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { DropdownSearchbar  } from "@/components/code-clamp/search-bar";
+
+# 🔽 Dropdown Search Bar
+
+An intelligent search bar that displays suggestions as you type, with smooth animations powered by Framer Motion.
+
+<Preview
+  link="dropdown-search-bar"
+  comment={["Suggestions"]}
+  className="bg-card border rounded-xl p-6"
+>
+  <DropdownSearchbar 
+    suggestions={[
+      "React hooks",
+      "Next.js tutorial",
+      "Tailwind CSS",
+      "Framer Motion animations",
+      "TypeScript basics"
+    ]} 
+  />
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Live Suggestions
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Displays relevant suggestions as users type
+    </p>
+  </div>
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Animated Dropdown
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Smooth entrance and exit animations for the suggestions panel
+    </p>
+  </div>
+
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Click-to-Select
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Users can click on suggestions to instantly search
+    </p>
+  </div>
+
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Smart Filtering
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Intelligently filters suggestions based on user input
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion
+# or
+npm install framer-motion
+# or
+yarn add framer-motion
+\`\`\`
+
+## 🧩 Usage
+
+{/* \`\`\`tsx
+import { DropdownSearchbar } from "@/components/search-bar";
+
+export default function MyComponent() {
+  const suggestions = [
+    "React hooks",
+    "Next.js tutorial",
+    "Tailwind CSS",
+    "Framer Motion animations",
+    "TypeScript basics"
+  ];
+
+  const handleSearch = (query) => {
+    console.log("Searching for:", query);
+    // Handle search logic here
+  };
+
+  return (
+    <DropdownSearchbar 
+      onSearch={handleSearch} 
+      suggestions={suggestions} 
+    />
+  );
+}
+\`\`\` */}

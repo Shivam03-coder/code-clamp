@@ -1,0 +1,113 @@
+---
+title: 🖥️ Base Terminal
+description: A clean, minimal terminal interface component
+icon: Terminal
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { BaseTerminal } from "@/components/code-clamp/terminal";
+
+# 🖥️ Base Terminal
+
+A clean, minimal terminal interface component with command history, typing animations, and customizable prompt.
+
+<Preview
+  link="base-terminal"
+  comment={["Basic"]}
+  className="bg-card border rounded-xl p-6"
+>
+  <BaseTerminal 
+    welcomeMessage={[
+      "Welcome to Base Terminal",
+      "Type 'help' to see available commands"
+    ]}
+    onCommand={async (cmd) => {
+      if (cmd === "help") {
+        return [
+          "Available commands:",
+          "hello - Display a greeting",
+          "date - Show current date and time",
+          "clear - Clear the terminal"
+        ];
+      } else if (cmd === "hello") {
+        return "Hello, world!";
+      } else if (cmd === "date") {
+        return new Date().toString();
+      } else {
+        return `Command not found: ${cmd}`;
+      }
+    }}
+  />
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Command History
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Maintains history of commands and responses
+    </p>
+  </div>
+  
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Keyboard Navigation
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Arrow keys to navigate command history
+    </p>
+  </div>
+
+  
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Animated Cursor
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Blinking cursor with smooth animations
+    </p>
+  </div>
+
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Customizable
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Configurable prompt, welcome message, and styling
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion lucide-react
+# or
+npm install framer-motion lucide-react
+# or
+yarn add framer-motion lucide-react
+\`\`\`
+
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `prompt` | `string` | `$` | Command prompt symbol |
+| `welcomeMessage` | `string \| string[]` | `Welcome to Terminal...` | Initial message shown |
+| `initialCommands` | `TerminalCommand[]` | `[]` | Pre-populated command history |
+| `autoFocus` | `boolean` | `true` | Focus terminal on mount |
+| `readOnly` | `boolean` | `false` | Disable command input |
+| `loading` | `boolean` | `false` | Show loading indicator |
+| `onCommand` | `(command: string) => Promise<string \| string[]> \| string \| string[]` | `undefined` | Command handler function |
+
+## 📋 Types
+

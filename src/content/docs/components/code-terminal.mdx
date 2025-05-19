@@ -1,0 +1,135 @@
+---
+title: 💻 Code Terminal
+description: Terminal with syntax highlighting for code
+icon: Code2
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { CodeTerminal } from "@/components/code-clamp/terminal";
+
+# 💻 Code Terminal
+
+A specialized terminal interface with syntax highlighting for code snippets and programming languages.
+
+<Preview
+  link="code-terminal"
+  comment={["Syntax"]}
+  className="bg-card border rounded-xl p-6"
+>
+  <CodeTerminal 
+    initialCommands={[
+      {
+        command: "function greet(name) {",
+        response: [
+          "  return `Hello, ${name}!`;",
+          "}"
+        ]
+      },
+      {
+        command: "const colors = ['red', 'green', 'blue'];",
+        response: []
+      },
+      {
+        command: "colors.map(color => color.toUpperCase())",
+        response: "[ 'RED', 'GREEN', 'BLUE' ]"
+      }
+    ]}
+    language="javascript"
+    theme="dark"
+  />
+</Preview>
+
+## ✨ Features
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+  <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Syntax Highlighting
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Color-coded syntax for better code readability
+    </p>
+  </div>
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Multiple Languages
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Support for JavaScript, TypeScript, HTML, CSS, and JSON
+    </p>
+  </div>
+
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="flex items-center gap-2 font-semibold">
+      <span className="text-primary">•</span> Light/Dark Themes
+    </h3>
+    <p className="text-muted-foreground mt-2 text-sm">
+      Choose between light and dark color schemes
+    </p>
+  </div>
+
+ <div className="p-4 rounded-lg border  bg-card">
+    <h3 className="font-semibold flex items-center gap-2">
+      <span className="text-primary">•</span> Code Execution
+    </h3>
+    <p className="mt-2 text-sm text-muted-foreground">
+      Simulate code execution with custom handlers
+    </p>
+  </div>
+</div>
+
+## 📦 Installation
+
+First install required dependencies:
+
+\`\`\`bash
+bun add framer-motion lucide-react
+# or
+npm install framer-motion lucide-react
+# or
+yarn add framer-motion lucide-react
+\`\`\`
+
+
+## 🔧 Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `theme` | `"dark" \| "light"` | `"dark"` | Color theme for the terminal |
+| `language` | `"javascript" \| "typescript" \| "html" \| "css" \| "json"` | `"javascript"` | Programming language for syntax highlighting |
+| `initialCommands` | `TerminalCommand[]` | `[]` | Pre-populated code examples |
+| `onCommand` | `(command: string) => Promise<string \| string[]> \| string \| string[]` | `undefined` | Command handler function |
+
+All props from `BaseTerminal` are also supported.
+
+## 🎨 Supported Languages
+
+The Code Terminal supports syntax highlighting for:
+
+- JavaScript
+- TypeScript
+- HTML
+- CSS
+- JSON
+
+Each language has its own prompt prefix and specialized highlighting rules.
+
+## 🌓 Themes
+
+Two built-in themes are available:
+
+- `dark` - Dark background with light text (default)
+- `light` - Light background with dark text
+
+\`\`\`tsx
+// Dark theme (default)
+<CodeTerminal theme="dark" />
+
+// Light theme
+<CodeTerminal theme="light" />
+\`\`\`
+
+The Code Terminal is perfect for code demonstrations, tutorials, or creating interactive coding playgrounds.
+\`\`\`

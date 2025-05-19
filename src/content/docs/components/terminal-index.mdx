@@ -1,0 +1,112 @@
+---
+title: Terminal UI Components
+description: A collection of animated terminal UI components for your Next.js application
+icon: Terminal
+---
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+    BaseTerminal,
+    MatrixTerminal,
+    RetroTerminal,
+    CodeTerminal,
+    InteractiveTerminal
+} from "@/components/code-clamp/terminal";
+
+# 🖥️ Terminal UI Components
+
+A collection of animated, customizable terminal UI components for your Next.js application.
+
+<Tabs defaultValue="base" className="w-full mt-6">
+  <TabsList className="grid w-full grid-cols-5">
+    <TabsTrigger value="base">Base</TabsTrigger>
+    <TabsTrigger value="matrix">Matrix</TabsTrigger>
+    <TabsTrigger value="retro">Retro</TabsTrigger>
+    <TabsTrigger value="code">Code</TabsTrigger>
+    <TabsTrigger value="interactive">Interactive</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="base" className="mt-4">
+    <Card>
+      <CardHeader>
+        <CardTitle>Base Terminal</CardTitle>
+        <CardDescription>A clean, minimal terminal interface</CardDescription>
+      </CardHeader>
+      <CardContent className="py-4">
+        <BaseTerminal 
+          welcomeMessage={`Welcome to\n\nAnimated Terminal UI Components with Framer Motion`}
+        />
+      </CardContent>
+    </Card>
+  </TabsContent>
+
+  <TabsContent value="matrix" className="mt-4">
+    <MatrixTerminal />
+  </TabsContent>
+
+  <TabsContent value="retro" className="mt-4">
+    <RetroTerminal />
+  </TabsContent>
+
+  <TabsContent value="code" className="mt-4">
+    <CodeTerminal />
+  </TabsContent>
+
+  <TabsContent value="interactive" className="mt-4">
+    <InteractiveTerminal />
+  </TabsContent>
+</Tabs>
+
+## ✨ Component Variants
+
+1. **Base Terminal**
+   - Clean, minimal terminal interface with animated typing cursor
+   - Command history with keyboard navigation
+   - Animated command responses
+   - Customizable prompt and welcome message
+
+2. **Matrix Terminal**
+   - Features the iconic Matrix falling code animation in the background
+   - Canvas-based animation that adapts to container size
+   - Customizable animation density and speed
+   - Perfect for cybersecurity or hacker-themed interfaces
+
+3. **Retro Terminal**
+   - Old-school CRT monitor effects with scanlines and screen curvature
+   - Animated flicker and random glitch effects
+   - Authentic vintage computing experience
+   - Ideal for retro-themed applications or games
+
+4. **Code Terminal**
+   - Syntax highlighting for code snippets
+   - Support for multiple programming languages
+   - Light and dark themes
+   - Perfect for code demonstrations or tutorials
+
+5. **Interactive Terminal**
+   - Clickable command buttons for easier interaction
+   - Animated command panel that can be toggled
+   - Command tooltips with descriptions
+   - Ideal for guided demos or user-friendly interfaces
+
+## 🧩 Key Animation Features
+
+- **Typing Cursor**: Animated blinking cursor with smooth transitions  
+- **Command Execution**: Animated appearance of command responses  
+- **Welcome Message**: Staggered animation for multi-line welcome messages  
+- **Visual Effects**: CRT screen effects, Matrix rain, and glitch animations  
+- **Interactive Elements**: Smooth transitions for buttons and panels  
+
+## 🧪 Usage Example
+
+```tsx
+import { BaseTerminal } from "@/components/terminal";
+
+export default function Demo() {
+  return (
+    <BaseTerminal 
+      welcomeMessage={`Welcome to\n\nAnimated Terminal UI Components with Framer Motion`}
+    />
+  );
+}

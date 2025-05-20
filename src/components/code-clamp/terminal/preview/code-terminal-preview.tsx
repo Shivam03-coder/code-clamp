@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import TerminalPreview from "./terminal-preview";
-import { BaseTerminal } from "../base-terminal";
 import { CodeTerminal } from "../code-terminal";
 
 const CodeTerminalPreview = () => {

@@ -8,84 +8,12 @@ import {
   type TerminalCommand,
 } from "./base-terminal";
 
-function highlightSyntax(text: string): React.ReactNode {
-  // Split the text by spaces and process each token
-  const tokens = text.split(/(\s+|[{}()\[\]<>:;,."'=+\-*/])/g).filter(Boolean);
-
-  return tokens.map((token, index) => {
-    // Keywords
-    if (
-      /^(function|return|const|let|var|if|else|for|while|import|export|from|class|interface|type|extends|implements)$/.test(
-        token,
-      )
-    ) {
-      return (
-        <span key={index} className="text-purple-400">
-          {token}
-        </span>
-      );
-    }
-    // Numbers
-    else if (/^\d+$/.test(token)) {
-      return (
-        <span key={index} className="text-yellow-400">
-          {token}
-        </span>
-      );
-    }
-    // Strings
-    else if (/^["'].*["']$/.test(token)) {
-      return (
-        <span key={index} className="text-green-400">
-          {token}
-        </span>
-      );
-    }
-    // Comments
-    else if (token.startsWith("//") || token.startsWith("/*")) {
-      return (
-        <span key={index} className="text-gray-500">
-          {token}
-        </span>
-      );
-    }
-    // Function calls
-    else if (/^[a-zA-Z_$][a-zA-Z0-9_$]*(?=\s*\()/.test(token)) {
-      return (
-        <span key={index} className="text-blue-400">
-          {token}
-        </span>
-      );
-    }
-    // Properties and methods
-    else if (/^[a-zA-Z_$][a-zA-Z0-9_$]*(?=\.)/.test(token)) {
-      return (
-        <span key={index} className="text-cyan-400">
-          {token}
-        </span>
-      );
-    }
-    // Brackets and punctuation
-    else if (/^[{}()\[\]<>:;,."'=+\-*/]$/.test(token)) {
-      return (
-        <span key={index} className="text-gray-400">
-          {token}
-        </span>
-      );
-    }
-    // Default
-    else {
-      return <span key={index}>{token}</span>;
-    }
-  });
-}
-
 type CodeTerminalProps = TerminalProps & {
   theme?: "dark" | "light";
   language?: "javascript" | "typescript" | "html" | "css" | "json";
 };
 
-export function CodeTerminal({
+function CodeTerminal({
   className,
   theme = "dark",
   language = "javascript",
@@ -176,3 +104,5 @@ export function CodeTerminal({
     </div>
   );
 }
+
+export { CodeTerminal };

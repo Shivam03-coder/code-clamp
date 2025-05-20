@@ -1,13 +1,36 @@
-
-import "./src/env.js";
-
-import { createMDX } from 'fumadocs-mdx/next';
+import { createMDX } from "fumadocs-mdx/next";
 
 const withMDX = createMDX();
 
-/** @type {import('next').NextConfig} */
-const config = {
-  reactStrictMode: true,
+const nextConfig = {
+    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    outputFileTracingIncludes: {
+        "/**": ["components/code-clamp/**/*"],
+    },
+    async headers() {
+        return [
+            {
+                source: "/r/:path*",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "public, max-age=31536000, immutable",
+                    },
+                ],
+            },
+        ];
+    },
+    images: {
+        remotePatterns: [
+            {
+                hostname: "*",
+            },
+        ],
+    },
+    reactStrictMode: true,
+    eslint: {
+        ignoreDuringBuilds: true,
+      },
 };
 
-export default withMDX(config);
+export default withMDX(nextConfig);

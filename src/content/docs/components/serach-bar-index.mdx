@@ -8,10 +8,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import SearchBarCards from "@/components/global/sub-cards";
 import { ActionSearchbar, ColorfulSearchbar, DropdownSearchbar, FilterSearchbar, MinimalSearchbar } from '@/components/code-clamp/search-bar';
-
+import { CopyCode } from "@/components/global/copy-code"
 
 # Search Bar Components
-
 A collection of customizable, animated search bar components for your application.
 
 <Tabs defaultValue="action" className="w-full mt-6">
@@ -103,7 +102,6 @@ A collection of customizable, animated search bar components for your applicatio
 </Tabs>
 
 ## 📦 Installation
-
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
   <div className="p-4 border rounded-lg bg-card">
     <h3 className="font-semibold flex items-center gap-2">
@@ -112,9 +110,7 @@ A collection of customizable, animated search bar components for your applicatio
     <p className="mt-2 text-sm text-muted-foreground">
       Required for all search bar components
     </p>
-    <pre className="mt-3 p-3 bg-muted rounded-md text-sm">
-      <code>bun add lucide-react</code>
-    </pre>
+    <CopyCode code="pnpm add lucide-react" />
   </div>
 
   <div className="p-4 border rounded-lg bg-card">
@@ -124,54 +120,36 @@ A collection of customizable, animated search bar components for your applicatio
     <p className="mt-2 text-sm text-muted-foreground">
       Required for animated components
     </p>
-    <pre className="mt-3 p-3 bg-muted rounded-md text-sm">
-      <code>bun add framer-motion</code>
-    </pre>
+    <CopyCode code="pnpm add motion" />
   </div>
 </div>
 
 ## 🛠️ Usage
 
 <div className="grid grid-cols-1 gap-4 mt-6">
-  <div className="p-4 border rounded-lg bg-card">
-    <h3 className="font-semibold mb-3">Import Components</h3>
-    <Tabs items={["Minimal", "Dropdown", "Colorful", "Action", "Filter"]}>
-      <pre className="p-3 bg-muted rounded-md text-sm">
-        <code>import {"{MinimalSearchbar}"} from "@/components/code-clamp/search-bar";</code>
-      </pre>
-      <pre className="p-3 bg-muted rounded-md text-sm">
-        <code>import {"{DropdownSearchbar}"} from "@/components/code-clamp/search-bar";</code>
-      </pre>
-      <pre className="p-3 bg-muted rounded-md text-sm">
-        <code>import {"{ColorfulSearchbar}"} from "@/components/code-clamp/search-bar";</code>
-      </pre>
-      <pre className="p-3 bg-muted rounded-md text-sm">
-        <code>import {"{ActionSearchbar}"} from "@/components/code-clamp/search-bar";</code>
-      </pre>
-      <pre className="p-3 bg-muted rounded-md text-sm">
-        <code>import {"{FilterSearchbar}"} from "@/components/code-clamp/search-bar";</code>
-      </pre>
-    </Tabs>
-  </div>
+<div className="p-4 border rounded-lg bg-card">
+  <h3 className="font-semibold mb-3">Import Components</h3>
+  <Tabs items={["Minimal", "Dropdown", "Colorful", "Action", "Filter"]}>
+    <CopyCode code={`import { MinimalSearchbar } from "@/components/code-clamp/search-bar";`} />
+    <CopyCode code={`import { DropdownSearchbar } from "@/components/code-clamp/search-bar";`} />
+    <CopyCode code={`import { ColorfulSearchbar } from "@/components/code-clamp/search-bar";`} />
+    <CopyCode code={`import { ActionSearchbar } from "@/components/code-clamp/search-bar";`} />
+    <CopyCode code={`import { FilterSearchbar } from "@/components/code-clamp/search-bar";`} />
+  </Tabs>
+</div>
 
-  <div className="p-4 border rounded-lg bg-card">
-    <h3 className="font-semibold mb-3">Basic Implementation</h3>
-    <pre className="p-3 bg-muted rounded-md text-sm">
-      <code>{`function SearchExample() {
+
+<div className="p-4 border rounded-lg bg-card">
+  <h3 className="font-semibold mb-3">Basic Implementation</h3>
+  <CopyCode
+    code={`function SearchExample() {
   const handleSearch = (query) => {
     console.log("Searching for:", query);
   };
-
-  return (
-    <ColorfulSearchbar 
-      onSearch={handleSearch}
-      colorScheme="purple"
-    />
-  );
 }`}
-      </code>
-    </pre>
-  </div>
+  />
+</div>
+
 </div>
 
 ## 🔍 Component Guides

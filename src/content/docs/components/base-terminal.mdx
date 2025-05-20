@@ -6,7 +6,10 @@ full: true
 ---
 
 import { Preview } from "@/components/mdx/preview";
-import { BaseTerminal } from "@/components/code-clamp/terminal";
+import {
+  BaseTerminalPreview,
+} from "@/components/code-clamp/terminal/preview/index";
+
 
 # 🖥️ Base Terminal
 
@@ -17,28 +20,7 @@ A clean, minimal terminal interface component with command history, typing anima
   comment={["Basic"]}
   className="bg-card border rounded-xl p-6"
 >
-  <BaseTerminal 
-    welcomeMessage={[
-      "Welcome to Base Terminal",
-      "Type 'help' to see available commands"
-    ]}
-    onCommand={async (cmd) => {
-      if (cmd === "help") {
-        return [
-          "Available commands:",
-          "hello - Display a greeting",
-          "date - Show current date and time",
-          "clear - Clear the terminal"
-        ];
-      } else if (cmd === "hello") {
-        return "Hello, world!";
-      } else if (cmd === "date") {
-        return new Date().toString();
-      } else {
-        return `Command not found: ${cmd}`;
-      }
-    }}
-  />
+  <BaseTerminalPreview />
 </Preview>
 
 ## ✨ Features

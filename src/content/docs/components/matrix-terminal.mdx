@@ -6,7 +6,10 @@ full: true
 ---
 
 import { Preview } from "@/components/mdx/preview";
-import { MatrixTerminal } from "@/components/code-clamp/terminal";
+import {
+  MatrixTerminalPreview,
+} from "@/components/code-clamp/terminal/preview/index";
+
 
 # 🧩 Matrix Terminal
 
@@ -17,24 +20,7 @@ A terminal interface with a "Matrix-style" falling code animation in the backgro
   comment={["Animation"]}
   className="bg-card border rounded-xl p-6"
 >
-  <MatrixTerminal 
-    welcomeMessage={[
-      "Matrix Terminal Initialized",
-      "System breach detected...",
-      "Type 'connect' to establish secure connection"
-    ]}
-    onCommand={async (cmd) => {
-      if (cmd === "connect") {
-        return [
-          "Establishing secure connection...",
-          "Access granted.",
-          "Welcome to the Matrix."
-        ];
-      } else {
-        return `Unknown command: ${cmd}`;
-      }
-    }}
-  />
+  <MatrixTerminalPreview />
 </Preview>
 
 ## ✨ Features

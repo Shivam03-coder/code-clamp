@@ -6,7 +6,8 @@ full: true
 ---
 
 import { Preview } from "@/components/mdx/preview";
-import { CodeTerminal } from "@/components/code-clamp/terminal";
+import { CodeTerminalPreview } from "@/components/code-clamp/terminal/preview";
+
 
 # 💻 Code Terminal
 
@@ -17,27 +18,7 @@ A specialized terminal interface with syntax highlighting for code snippets and 
   comment={["Syntax"]}
   className="bg-card border rounded-xl p-6"
 >
-  <CodeTerminal 
-    initialCommands={[
-      {
-        command: "function greet(name) {",
-        response: [
-          "  return `Hello, ${name}!`;",
-          "}"
-        ]
-      },
-      {
-        command: "const colors = ['red', 'green', 'blue'];",
-        response: []
-      },
-      {
-        command: "colors.map(color => color.toUpperCase())",
-        response: "[ 'RED', 'GREEN', 'BLUE' ]"
-      }
-    ]}
-    language="javascript"
-    theme="dark"
-  />
+  <CodeTerminalPreview />
 </Preview>
 
 ## ✨ Features

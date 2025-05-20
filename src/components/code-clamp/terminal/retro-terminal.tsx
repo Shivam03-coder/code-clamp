@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "motion/react"
-import { cn } from "@/lib/utils"
-import { BaseTerminal, type TerminalProps } from "./base-terminal"
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+import { BaseTerminal, type TerminalProps } from "./base-terminal";
 
 type RetroTerminalProps = TerminalProps & {
-  scanlines?: boolean
-  flicker?: boolean
-  glitch?: boolean
-}
+  scanlines?: boolean;
+  flicker?: boolean;
+  glitch?: boolean;
+};
 
 export function RetroTerminal({
   className,
@@ -18,21 +18,21 @@ export function RetroTerminal({
   glitch = true,
   ...props
 }: RetroTerminalProps) {
-  const [glitchActive, setGlitchActive] = useState(false)
+  const [glitchActive, setGlitchActive] = useState(false);
 
   // Random glitch effect
   useEffect(() => {
-    if (!glitch) return
+    if (!glitch) return;
 
     const glitchInterval = setInterval(() => {
       if (Math.random() > 0.95) {
-        setGlitchActive(true)
-        setTimeout(() => setGlitchActive(false), 100 + Math.random() * 200)
+        setGlitchActive(true);
+        setTimeout(() => setGlitchActive(false), 100 + Math.random() * 200);
       }
-    }, 2000)
+    }, 2000);
 
-    return () => clearInterval(glitchInterval)
-  }, [glitch])
+    return () => clearInterval(glitchInterval);
+  }, [glitch]);
 
   return (
     <div className={cn("relative h-80 overflow-hidden rounded-md", className)}>
@@ -46,20 +46,30 @@ export function RetroTerminal({
       />
 
       {/* Scanlines */}
-      {scanlines && <div className="absolute inset-0 z-20 bg-scanlines opacity-10" />}
+      {scanlines && (
+        <div className="bg-scanlines absolute inset-0 z-20 opacity-10" />
+      )}
 
       {/* Flicker effect */}
       {flicker && (
         <motion.div
           className="absolute inset-0 z-30 bg-white opacity-0"
           animate={{ opacity: [0, 0.02, 0, 0.01, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 5, repeatType: "loop" }}
+          transition={{
+            repeat: Number.POSITIVE_INFINITY,
+            duration: 5,
+            repeatType: "loop",
+          }}
         />
       )}
 
       {/* Glitch effect */}
       {glitch && glitchActive && (
-        <motion.div className="absolute inset-0 z-40 overflow-hidden" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div
+          className="absolute inset-0 z-40 overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <motion.div
             className="absolute inset-0 bg-green-500 opacity-10"
             animate={{
@@ -103,5 +113,5 @@ export function RetroTerminal({
         }
       `}</style>
     </div>
-  )
+  );
 }

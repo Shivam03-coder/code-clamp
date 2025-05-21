@@ -6,6 +6,7 @@
   "scripts": {
     "build": "next build",
     "postinstall": "fumadocs-mdx",
+    "build-registry": "ts-node scripts/build-registry.ts",
     "check": "next lint && tsc --noEmit",
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
@@ -51,7 +52,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
-  "fumadocs-core": "^15.2.9",
+    "fumadocs-core": "^15.2.9",
     "fumadocs-mdx": "^11.6.1",
     "fumadocs-ui": "^15.2.9",
     "input-otp": "^1.4.2",
@@ -86,8 +87,10 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.15",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
     "tw-animate-css": "^1.2.9",
-    "typescript": "^5.8.2",
+    "typescript": "^5.8.3",
     "typescript-eslint": "^8.27.0"
   },
   "ct3aMetadata": {

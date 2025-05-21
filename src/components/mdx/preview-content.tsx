@@ -54,7 +54,7 @@ export default function PreviewContent({
 
   const handleTerminalClick = () => {
     const [folder, filename] = link.split("/");
-    const COPY = `bunx shadcn@latest add ${prePath}/r/${
+    const COPY = `npx shadcn@latest add ${prePath}/r/${
       filename ? filename : folder
     }.json`;
     navigator.clipboard.writeText(COPY);
@@ -216,7 +216,7 @@ export default function PreviewContent({
                   size="sm"
                   disabled={isPending}
                   className={cn(
-                    "relative overflow-hidden ",
+                    "relative overflow-hidden",
                     "h-7 px-3 text-xs font-medium",
                     "bg-black dark:bg-white",
                     "text-white dark:text-black",

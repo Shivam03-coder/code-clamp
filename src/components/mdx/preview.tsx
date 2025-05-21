@@ -14,9 +14,7 @@ interface PreviewProps {
   isBlock?: boolean;
 }
 
-const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "https://ui.codesnipet.com";
+const prePath = "https://code-clamp.vercel.app";
 
 export function Preview({
   children,

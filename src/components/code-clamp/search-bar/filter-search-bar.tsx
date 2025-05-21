@@ -4,7 +4,7 @@ import type React from "react";
 
 import { Search, Filter, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -21,12 +21,12 @@ type FilterOption = {
   label: string;
 };
 
-type FilterSearchBarProps = {
+interface FilterSearchBarProps extends ComponentProps<typeof Input>  {
   className?: string;
   onSearch?: (query: string, filters: string[]) => void;
   filterOptions?: FilterOption[];
   placeholder?: string;
-};
+}
 
 function FilterSearchbar({
   className,

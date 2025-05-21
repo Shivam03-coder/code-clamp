@@ -1,5 +1,6 @@
 "use client";
 
+import { ActionSearchbar } from "@/components/code-clamp/search-bar";
 import {
   ArrowUpRight,
   PartyPopper,

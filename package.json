@@ -6,7 +6,7 @@
   "scripts": {
     "build": "next build",
     "postinstall": "fumadocs-mdx",
-    "build-registry": "ts-node scripts/build-registry.ts",
+    "registry": "tsx ./scripts/build-registry.ts",
     "check": "next lint && tsc --noEmit",
     "dev": "next dev --turbo",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",

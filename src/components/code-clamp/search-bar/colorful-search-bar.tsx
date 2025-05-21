@@ -1,11 +1,10 @@
 "use client";
 
-import type React from "react";
-
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ComponentProps } from "react";
 import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
 
 type ColorScheme = "blue" | "purple" | "green" | "amber" | "rose";
 
@@ -37,19 +36,36 @@ const colorSchemes = {
   },
 };
 
+interface ColorfulSearchbarProps extends ComponentProps<typeof Input> {
+  onSearch?: (query: string) => void;
+  containerClassName?: string;
+  colorScheme?: ColorScheme;
+}
+
 function ColorfulSearchbar({
   className,
-  onSearch,
+  containerClassName,
   colorScheme = "blue",
-}: {
-  className?: string;
-  onSearch?: (query: string) => void;
-  colorScheme?: ColorScheme;
-}) {
+  onSearch,
+  value,
+  onChange,
+  ...inputProps
+}: ColorfulSearchbarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [internalValue, setInternalValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const colors = colorSchemes[colorScheme];
+
+  const isControlled = value !== undefined;
+  const searchQuery = isControlled ? String(value) : internalValue;
+
+  const setSearchQuery = (val: string) => {
+    if (isControlled && onChange) {
+      onChange({ target: { value: val } } as any);
+    } else {
+      setInternalValue(val);
+    }
+  };
 
   const handleSearch = () => {
     if (searchQuery.trim() && onSearch) {
@@ -72,7 +88,7 @@ function ColorfulSearchbar({
   }, [isExpanded]);
 
   return (
-    <div className={cn("relative flex items-center", className)}>
+    <div className={cn("relative flex items-center", containerClassName)}>
       <AnimatePresence>
         {isExpanded && (
           <motion.div
@@ -82,14 +98,16 @@ function ColorfulSearchbar({
             transition={{ type: "spring", damping: 20, stiffness: 200 }}
             className="overflow-hidden"
           >
-            <input
+            <Input
               ref={inputRef}
               type="text"
               placeholder="Search anything..."
               className={cn(
                 "h-10 rounded-l-md border px-3 py-2 focus:outline-none",
-                `${colors.input} ${colors.shadow}`,
+                colors.input,
+                colors.shadow,
                 "shadow-sm transition-shadow duration-300",
+                className,
               )}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -97,6 +115,7 @@ function ColorfulSearchbar({
               onBlur={() => {
                 if (!searchQuery) setIsExpanded(false);
               }}
+              {...inputProps}
             />
           </motion.div>
         )}

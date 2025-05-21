@@ -2,17 +2,24 @@
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentProps } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-function ActionSearchbar({
-  className,
-  onSearch,
-}: {
-  className?: string;
+interface SearchbarProps extends ComponentProps<typeof Input> {
   onSearch?: (query: string) => void;
-}) {
+  containerClassName?: string;
+  className?: string;
+}
+
+function ActionSearchbar({
+  onSearch,
+  className,
+  containerClassName,
+  value,
+  onChange,
+  ...inputProps
+}: SearchbarProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
@@ -91,4 +98,4 @@ function ActionSearchbar({
   );
 }
 
-export default ActionSearchbar
+export default ActionSearchbar;

@@ -1,45 +1,47 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { Search } from "lucide-react"
-import { useState, useRef, useEffect } from "react"
-import { cn } from "@/lib/utils"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Search } from "lucide-react";
+import { useState, useRef, useEffect, type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+interface MinimalSearchBarProps extends ComponentProps<typeof Input> {
+  className?: string;
+  onSearch?: (query: string) => void;
+  placeholder?: string;
+}
 
 function MinimalSearchBar({
   className,
   onSearch,
   placeholder = "Search...",
-}: {
-  className?: string
-  onSearch?: (query: string) => void
-  placeholder?: string
-}) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
-  const inputRef = useRef<HTMLInputElement>(null)
+}: MinimalSearchBarProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSearch = () => {
     if (searchQuery.trim() && onSearch) {
-      onSearch(searchQuery)
+      onSearch(searchQuery);
     }
-  }
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      handleSearch()
+      handleSearch();
     } else if (e.key === "Escape") {
-      setIsExpanded(false)
+      setIsExpanded(false);
     }
-  }
+  };
 
   useEffect(() => {
     if (isExpanded && inputRef.current) {
-      inputRef.current.focus()
+      inputRef.current.focus();
     }
-  }, [isExpanded])
+  }, [isExpanded]);
 
   return (
     <div className={cn("relative flex items-center", className)}>
@@ -54,7 +56,7 @@ function MinimalSearchBar({
             onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             onBlur={() => {
-              if (!searchQuery) setIsExpanded(false)
+              if (!searchQuery) setIsExpanded(false);
             }}
           />
         </div>
@@ -63,19 +65,22 @@ function MinimalSearchBar({
       <Button
         variant="outline"
         size="icon"
-        className={cn("h-10 w-10 rounded-full p-0 transition-all duration-300", isExpanded && "rounded-l-none")}
+        className={cn(
+          "h-10 w-10 rounded-full p-0 transition-all duration-300",
+          isExpanded && "rounded-l-none",
+        )}
         onClick={() => {
           if (isExpanded) {
-            handleSearch()
+            handleSearch();
           } else {
-            setIsExpanded(true)
+            setIsExpanded(true);
           }
         }}
       >
         <Search className="h-4 w-4" />
       </Button>
     </div>
-  )
+  );
 }
 
-export default MinimalSearchBar
+export default MinimalSearchBar;

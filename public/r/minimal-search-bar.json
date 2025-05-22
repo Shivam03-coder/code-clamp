@@ -1,0 +1,20 @@
+{
+  "name": "minimal-search-bar",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "input",
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport type React from \"react\";\n\nimport { Search } from \"lucide-react\";\nimport { useState, useRef, useEffect, type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { Input } from \"@/components/ui/input\";\nimport { Button } from \"@/components/ui/button\";\n\ninterface MinimalSearchBarProps extends ComponentProps<typeof Input> {\n  className?: string;\n  onSearch?: (query: string) => void;\n  placeholder?: string;\n}\n\nfunction MinimalSearchBar({\n  className,\n  onSearch,\n  placeholder = \"Search...\",\n}: MinimalSearchBarProps) {\n  const [isExpanded, setIsExpanded] = useState(false);\n  const [searchQuery, setSearchQuery] = useState(\"\");\n  const inputRef = useRef<HTMLInputElement>(null);\n\n  const handleSearch = () => {\n    if (searchQuery.trim() && onSearch) {\n      onSearch(searchQuery);\n    }\n  };\n\n  const handleKeyDown = (e: React.KeyboardEvent) => {\n    if (e.key === \"Enter\") {\n      handleSearch();\n    } else if (e.key === \"Escape\") {\n      setIsExpanded(false);\n    }\n  };\n\n  useEffect(() => {\n    if (isExpanded && inputRef.current) {\n      inputRef.current.focus();\n    }\n  }, [isExpanded]);\n\n  return (\n    <div className={cn(\"relative flex items-center\", className)}>\n      {isExpanded && (\n        <div className=\"overflow-hidden transition-all duration-300 ease-in-out\">\n          <Input\n            ref={inputRef}\n            type=\"text\"\n            placeholder={placeholder}\n            className=\"h-10 rounded-r-none border-r-0 focus-visible:ring-0\"\n            value={searchQuery}\n            onChange={(e) => setSearchQuery(e.target.value)}\n            onKeyDown={handleKeyDown}\n            onBlur={() => {\n              if (!searchQuery) setIsExpanded(false);\n            }}\n          />\n        </div>\n      )}\n\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        className={cn(\n          \"h-10 w-10 rounded-full p-0 transition-all duration-300\",\n          isExpanded && \"rounded-l-none\",\n        )}\n        onClick={() => {\n          if (isExpanded) {\n            handleSearch();\n          } else {\n            setIsExpanded(true);\n          }\n        }}\n      >\n        <Search className=\"h-4 w-4\" />\n      </Button>\n    </div>\n  );\n}\n\nexport default MinimalSearchBar;\n",
+      "path": "/components/code-clamp/search-bar/minimal-search-bar.tsx",
+      "target": "/components/code-clamp/minimal-search-bar.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "scale-dialog",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\nimport { Button } from \"@/components/ui/button\"\nimport {\n  AnimatedDialog,\n  DialogHeader,\n  DialogFooter,\n  DialogTitle,\n  DialogDescription,\n  DialogClose,\n  type AnimatedDialogProps,\n} from \"./base-dialog\"\n\ninterface ScaleDialogProps extends Omit<AnimatedDialogProps, \"variant\"> {\n  title?: React.ReactNode\n  description?: React.ReactNode\n  triggerText?: string\n  confirmText?: string\n  cancelText?: string\n  onConfirm?: () => void\n  showFooter?: boolean\n}\n\nexport function ScaleDialog({\n  title,\n  description,\n  children,\n  triggerText = \"Open Dialog\",\n  confirmText = \"Confirm\",\n  cancelText = \"Cancel\",\n  onConfirm,\n  showFooter = true,\n  className,\n  ...props\n}: ScaleDialogProps) {\n  const [open, setOpen] = React.useState(false)\n\n  const handleConfirm = () => {\n    if (onConfirm) {\n      onConfirm()\n    }\n    setOpen(false)\n  }\n\n  return (\n    <AnimatedDialog\n      trigger={\n        <Button variant=\"outline\" onClick={() => setOpen(true)}>\n          {triggerText}\n        </Button>\n      }\n      variant=\"scale\"\n      duration={0.3}\n      open={open}\n      onOpenChange={setOpen}\n      className={cn(\"sm:max-w-[425px]\", className)}\n      {...props}\n    >\n      {title && (\n        <DialogHeader>\n          <DialogTitle>{title}</DialogTitle>\n          {description && <DialogDescription>{description}</DialogDescription>}\n        </DialogHeader>\n      )}\n\n      <div className=\"py-4\">{children}</div>\n\n      {showFooter && (\n        <DialogFooter className=\"gap-2 sm:gap-0\">\n          <DialogClose asChild>\n            <Button variant=\"outline\">{cancelText}</Button>\n          </DialogClose>\n          <Button onClick={handleConfirm}>{confirmText}</Button>\n        </DialogFooter>\n      )}\n    </AnimatedDialog>\n  )\n}\n",
+      "path": "/components/code-clamp/dialog/scale-dialog.tsx",
+      "target": "/components/code-clamp/scale-dialog.tsx"
+    }
+  ]
+}

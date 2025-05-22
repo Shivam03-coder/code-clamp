@@ -123,7 +123,7 @@ export const component: Registry = [
   },
 
   // button
-    {
+  {
     name: "base-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
@@ -135,7 +135,7 @@ export const component: Registry = [
       },
     ],
   },
-    {
+  {
     name: "bounce-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
@@ -147,7 +147,7 @@ export const component: Registry = [
       },
     ],
   },
-    {
+  {
     name: "glow-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
@@ -159,7 +159,7 @@ export const component: Registry = [
       },
     ],
   },
-    {
+  {
     name: "magnetic-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
@@ -171,7 +171,7 @@ export const component: Registry = [
       },
     ],
   },
-    {
+  {
     name: "pulse-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
@@ -183,7 +183,7 @@ export const component: Registry = [
       },
     ],
   },
-    {
+  {
     name: "ripple-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
@@ -191,6 +191,111 @@ export const component: Registry = [
     files: [
       {
         path: "components/code-clamp/button/ripple-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  // spinner
+  {
+    name: "dot-spinner",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/spinner/dot-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  // spinner
+  {
+    name: "circle-spinner",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/spinner/circle-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  // spinner
+  {
+    name: "progress-spinner",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/spinner/progress-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  // spinner
+  {
+    name: "wave-spinner",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/spinner/wave-spinner.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+
+  // terminal
+  {
+    name: "base-terminal",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/terminal/base-terminal.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "code-terminal",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/terminal/code-terminal.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "interactive-terminal",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/terminal/interactive-terminal.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "matrix-terminal",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/terminal/matrix-terminal.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "retro-terminal",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    files: [
+      {
+        path: "components/code-clamp/terminal/retro-terminal.tsx",
         type: "registry:component",
       },
     ],

@@ -1,0 +1,16 @@
+{
+  "name": "progress-spinner",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface ProgressSpinnerProps {\n  size?: number\n  thickness?: number\n  color?: string\n  secondaryColor?: string\n  progress?: number\n  showProgress?: boolean\n  className?: string\n}\n\nexport function ProgressSpinner({\n  size = 60,\n  thickness = 4,\n  color = \"currentColor\",\n  secondaryColor = \"rgba(0, 0, 0, 0.1)\",\n  progress = 0,\n  showProgress = true,\n  className,\n}: ProgressSpinnerProps) {\n  // Calculate the circumference of the circle\n  const radius = (size - thickness) / 2\n  const circumference = 2 * Math.PI * radius\n  \n  // Calculate the stroke-dashoffset based on progress\n  const strokeDashoffset = circumference - (progress / 100) * circumference\n  \n  return (\n    <div\n      className={cn(\"relative inline-flex items-center justify-center\", className)}\n      style={{\n        width: size,\n        height: size,\n      }}\n      role=\"status\"\n      aria-label={`Loading ${progress}%`}\n      aria-valuenow={progress}\n      aria-valuemin={0}\n      aria-valuemax={100}\n    >\n      {/* Background circle */}\n      <svg\n        width={size}\n        height={size}\n        viewBox={`0 0 ${size} ${size}`}\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        className=\"absolute\"\n      >\n        <circle\n          cx={size / 2}\n          cy={size / 2}\n          r={radius}\n          stroke={secondaryColor}\n          strokeWidth={thickness}\n          fill=\"none\"\n        />\n      </svg>\n      \n      {/* Progress circle */}\n      <svg\n        width={size}\n        height={size}\n        viewBox={`0 0 ${size} ${size}`}\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n        className=\"absolute\"\n        style={{ transform: \"rotate(-90deg)\" }}\n      >\n        <motion.circle\n          cx={size / 2}\n          cy={size / 2}\n          r={radius}\n          stroke={color}\n          strokeWidth={thickness}\n          strokeDasharray={circumference}\n          strokeDashoffset={strokeDashoffset}\n          strokeLinecap=\"round\"\n          fill=\"none\"\n          initial={{ strokeDashoffset: circumference }}\n          animate={{ strokeDashoffset }}\n          transition={{ duration: 0.5, ease: \"easeOut\" }}\n        />\n      </svg>\n      \n      {/* Progress text */}\n      {showProgress && (\n        <div className=\"text-sm font-medium\">{Math.round(progress)}%</div>\n      )}\n      \n      <span className=\"sr-only\">Loading {progress}%</span>\n    </div>\n  )\n}\n",
+      "path": "/components/code-clamp/spinner/progress-spinner.tsx",
+      "target": "/components/code-clamp/progress-spinner.tsx"
+    }
+  ]
+}

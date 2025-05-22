@@ -1,0 +1,16 @@
+{
+  "name": "circle-spinner",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface CircleSpinnerProps {\n  size?: number\n  thickness?: number\n  color?: string\n  secondaryColor?: string\n  speed?: number\n  className?: string\n}\n\nexport function CircleSpinner({\n  size = 40,\n  thickness = 4,\n  color = \"currentColor\",\n  secondaryColor = \"rgba(0, 0, 0, 0.1)\",\n  speed = 1.5,\n  className,\n}: CircleSpinnerProps) {\n  return (\n    <div\n      className={cn(\"relative inline-block\", className)}\n      style={{\n        width: size,\n        height: size,\n      }}\n      role=\"status\"\n      aria-label=\"Loading\"\n    >\n      {/* Background circle */}\n      <div\n        className=\"absolute inset-0 rounded-full\"\n        style={{\n          borderWidth: thickness,\n          borderStyle: \"solid\",\n          borderColor: secondaryColor,\n        }}\n      />\n      \n      {/* Animated spinner */}\n      <motion.div\n        className=\"absolute inset-0 rounded-full\"\n        style={{\n          borderWidth: thickness,\n          borderStyle: \"solid\",\n          borderColor: `transparent transparent transparent ${color}`,\n        }}\n        animate={{ rotate: 360 }}\n        transition={{\n          duration: speed,\n          ease: \"linear\",\n          repeat: Infinity,\n        }}\n      />\n      \n      <span className=\"sr-only\">Loading</span>\n    </div>\n  )\n}\n",
+      "path": "/components/code-clamp/spinner/circle-spinner.tsx",
+      "target": "/components/code-clamp/circle-spinner.tsx"
+    }
+  ]
+}

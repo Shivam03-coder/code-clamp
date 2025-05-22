@@ -1,0 +1,16 @@
+{
+  "name": "code-terminal",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport {\n  BaseTerminal,\n  type TerminalProps,\n  type TerminalCommand,\n} from \"./base-terminal\";\n\ntype CodeTerminalProps = TerminalProps & {\n  theme?: \"dark\" | \"light\";\n  language?: \"javascript\" | \"typescript\" | \"html\" | \"css\" | \"json\";\n};\n\nfunction CodeTerminal({\n  className,\n  theme = \"dark\",\n  language = \"javascript\",\n  ...props\n}: CodeTerminalProps) {\n  const [processedCommands, setProcessedCommands] = useState<TerminalCommand[]>(\n    [],\n  );\n\n  // Process commands for syntax highlighting\n  useEffect(() => {\n    if (!props.initialCommands) return;\n\n    const processed = props.initialCommands.map((cmd) => ({\n      ...cmd,\n      command: cmd.command,\n      response: Array.isArray(cmd.response) ? cmd.response : [cmd.response],\n    }));\n\n    setProcessedCommands(processed);\n  }, [props.initialCommands]);\n\n  // Custom command handler to apply syntax highlighting\n  const handleCommand = async (command: string) => {\n    if (props.onCommand) {\n      const response = await props.onCommand(command);\n      return response;\n    }\n    return `Command not recognized: ${command}`;\n  };\n\n  const bgColor = theme === \"dark\" ? \"bg-zinc-900\" : \"bg-white\";\n  const textColor = theme === \"dark\" ? \"text-gray-200\" : \"text-gray-800\";\n  const borderColor = theme === \"dark\" ? \"border-zinc-700\" : \"border-gray-200\";\n\n  return (\n    <div className={cn(\"relative h-80 overflow-hidden rounded-md\", className)}>\n      <BaseTerminal\n        className={cn(\n          \"border\",\n          bgColor,\n          textColor,\n          borderColor,\n          \"font-mono text-sm\",\n        )}\n        prompt={\n          language === \"javascript\"\n            ? \"js>\"\n            : language === \"typescript\"\n              ? \"ts>\"\n              : \">\"\n        }\n        welcomeMessage={[\n          `${language.toUpperCase()} Code Terminal`,\n          \"Type your code below and press Enter to execute.\",\n        ]}\n        initialCommands={processedCommands}\n        onCommand={handleCommand}\n        {...props}\n      />\n\n      {/* Custom rendering for syntax highlighting */}\n      <style jsx global>{`\n        .code-terminal .command {\n          color: ${theme === \"dark\" ? \"#e2e8f0\" : \"#1a202c\"};\n        }\n\n        .code-terminal .keyword {\n          color: #9333ea;\n        }\n\n        .code-terminal .string {\n          color: #22c55e;\n        }\n\n        .code-terminal .number {\n          color: #eab308;\n        }\n\n        .code-terminal .function {\n          color: #3b82f6;\n        }\n\n        .code-terminal .comment {\n          color: #6b7280;\n        }\n      `}</style>\n    </div>\n  );\n}\n\nexport { CodeTerminal };\n",
+      "path": "/components/code-clamp/terminal/code-terminal.tsx",
+      "target": "/components/code-clamp/code-terminal.tsx"
+    }
+  ]
+}

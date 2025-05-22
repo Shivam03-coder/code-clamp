@@ -1,0 +1,16 @@
+{
+  "name": "wave-spinner",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\"\n\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nexport interface WaveSpinnerProps {\n  size?: number\n  barWidth?: number\n  barCount?: number\n  gap?: number\n  color?: string\n  speed?: number\n  amplitude?: number\n  className?: string\n}\n\nexport function WaveSpinner({\n  size = 60,\n  barWidth = 4,\n  barCount = 5,\n  gap = 4,\n  color = \"currentColor\",\n  speed = 1.2,\n  amplitude = 20,\n  className,\n}: WaveSpinnerProps) {\n  // Calculate total width based on bar count, width and gap\n  const totalWidth = barCount * barWidth + (barCount - 1) * gap\n  \n  return (\n    <div\n      className={cn(\"flex items-center justify-center\", className)}\n      style={{\n        width: size,\n        height: size,\n      }}\n      role=\"status\"\n      aria-label=\"Loading\"\n    >\n      <div\n        className=\"flex items-end justify-between\"\n        style={{\n          width: totalWidth,\n          height: amplitude,\n        }}\n      >\n        {Array.from({ length: barCount }).map((_, i) => (\n          <motion.div\n            key={i}\n            style={{\n              width: barWidth,\n              backgroundColor: color,\n            }}\n            animate={{\n              height: [\n                amplitude * 0.3,\n                amplitude,\n                amplitude * 0.3,\n              ],\n            }}\n            transition={{\n              duration: speed,\n              ease: \"easeInOut\",\n              repeat: Infinity,\n              delay: i * (speed / barCount),\n            }}\n          />\n        ))}\n      </div>\n      \n      <span className=\"sr-only\">Loading</span>\n    </div>\n  )\n}\n",
+      "path": "/components/code-clamp/spinner/wave-spinner.tsx",
+      "target": "/components/code-clamp/wave-spinner.tsx"
+    }
+  ]
+}

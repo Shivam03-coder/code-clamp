@@ -37,6 +37,6 @@
     "**/*.cjs",
     "**/*.js",
     ".next/types/**/*.ts"
-, "src/content/docs/components/dialog-index.mdx"  ],
+, "src/content/docs/components/dialog-index.mdx", "src/content/docs/components/dot-spinner.mdx", "src/content/docs/components/progress-spinner.mdx", "src/content/docs/components/pulse-spinner.mdx", "src/content/docs/components/spinner-group.mdx", "src/content/docs/components/wave-spinner.mdx"  ],
   "exclude": ["node_modules"]
 }

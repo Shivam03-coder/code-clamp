@@ -1,0 +1,45 @@
+---
+title: Wave Spinner
+description: A simple wave-like spinner with smooth animation
+icon: CircleDashed
+full: true
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { WaveSpinner } from "@/components/code-clamp/spinner/index";
+
+# 🌊 Wave Spinner 
+
+A wave-like spinner component with smooth undulating animation, built with Framer Motion for fluid transitions.
+
+<Preview
+  link="wave-spinner"
+  comment={["Smooth wave animation", "Customizable colors"]}
+  className="bg-card border rounded-xl p-6  items-center"
+>
+  <WaveSpinner />
+</Preview>
+
+## Features
+
+- Smooth wave-like undulation animation
+- Customizable color through props
+- Responsive sizing
+- Lightweight implementation using Framer Motion
+
+## Usage
+
+```tsx
+import { WaveSpinner } from "@/components/ui/wave-spinner";
+
+function LoadingIndicator() {
+  return (
+    <div className="flex justify-center items-center h-64">
+      <WaveSpinner 
+        color="#3b82f6" 
+        waveWidth={4}
+        speed={1.5}
+      />
+    </div>
+  );
+}

@@ -26,6 +26,11 @@
     "components/scale-dialog",
     "components/flip-dialog",
     "components/fade-dialog",
-    "components/drawer-dialog"
+    "components/drawer-dialog",
+    "---Spinner---",
+    "components/wave-spinner",
+    "components/pulse-spinner",
+    "components/progress-spinner",
+    "components/dot-spinner"
   ]
 }

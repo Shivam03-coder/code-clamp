@@ -1,0 +1,41 @@
+---
+title: Progress Spinner
+description: A circular progress indicator with smooth animation
+icon: CircleDashed
+full: true
+category: Feedback
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { ProgressSpinner } from "@/components/code-clamp/spinner/index";
+
+# Progress Spinner 🌟
+
+<Preview
+  link="progress-spinner"
+  comment={["Animation", "Loading Indicator"]}
+  className="bg-card border rounded-xl p-6 items-center min-h-[200px]"
+>
+  <ProgressSpinner />
+</Preview>
+
+## Features ✨
+
+- Smooth circular progress animation
+- Customizable size, thickness, and colors
+- Determinate and indeterminate modes
+- Built with Framer Motion for fluid animations
+- Accessible ARIA attributes
+
+## Basic Usage 🛠️
+
+```tsx
+import { ProgressSpinner } from "@/components/code-clamp/spinner";
+
+function LoadingIndicator() {
+  return (
+    <div className="flex justify-center items-center p-8">
+      <ProgressSpinner />
+    </div>
+  );
+}

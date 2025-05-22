@@ -1,0 +1,41 @@
+---
+title: Dot Spinner
+description: A collection of animated dots for loading indicators
+icon: CircleDashed
+full: true
+category: Feedback
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { DotSpinner } from "@/components/code-clamp/spinner/index";
+
+# Dot Spinner 🌟
+
+<Preview
+  link="dot-spinner"
+  comment={["Animation", "Loading Indicator"]}
+  className="bg-card border rounded-xl p-6 items-center"
+>
+  <DotSpinner />
+</Preview>
+
+## Features ✨
+
+- Smooth sequential dot animation
+- Customizable dot count, size, and colors
+- Configurable animation speed and spacing
+- Lightweight and performant
+- Built with Framer Motion for fluid animations
+
+## Basic Usage 🛠️
+
+```tsx
+import { DotSpinner } from "@/components/code-clamp/spinner";
+
+function LoadingState() {
+  return (
+    <div className="flex justify-center p-8">
+      <DotSpinner />
+    </div>
+  );
+}

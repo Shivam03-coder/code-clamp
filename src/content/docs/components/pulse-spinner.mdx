@@ -1,0 +1,41 @@
+---
+title: Pulse Spinner
+description: A pulsating loading indicator with smooth animation
+icon: CircleDashed
+full: true
+category: Feedback
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { PulseSpinner } from "@/components/code-clamp/spinner/index";
+
+# Pulse Spinner 🌟
+
+<Preview
+  link="pulse-spinner"
+  comment={["Animation", "Loading Indicator"]}
+  className="bg-card border rounded-xl p-8 items-center min-h-[200px]"
+>
+  <PulseSpinner />
+</Preview>
+
+## Features ✨
+
+- Smooth pulsating animation effect
+- Customizable size, color, and speed
+- Lightweight and performant
+- Built with Framer Motion for fluid animations
+- Accessible for screen readers
+
+## Basic Usage 🛠️
+
+```tsx
+import { PulseSpinner } from "@/components/code-clamp/spinner";
+
+function LoadingIndicator() {
+  return (
+    <div className="flex justify-center items-center p-8">
+      <PulseSpinner />
+    </div>
+  );
+}

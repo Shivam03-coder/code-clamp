@@ -1,0 +1,39 @@
+---
+title: BaseButton
+description: A foundational button component with customizable styles and states
+icon: SquareMousePointer
+full: true
+category: Input
+---
+
+import { Preview } from "@/components/mdx/preview";
+import { BaseButton } from "@/components/code-clamp/button";
+
+# BaseButton 🖱️
+
+A versatile button component serving as the foundation for all button variants in your design system.
+
+<Preview
+  link="base-button"
+  comment={["Customizable", "Accessible", "Multiple States"]}
+  className="bg-card border rounded-xl p-8   items-center justify-center min-h-[200px]"
+>
+<div className='mx-2'/>
+<div className='mx-2'/>
+  <BaseButton>Default</BaseButton>
+<div className='mx-2'/>
+  <BaseButton variant="primary">Primary</BaseButton>
+<div className='mx-2'/>
+  <BaseButton variant="outline">Outline</BaseButton>
+<div className='mx-2'/>
+  <BaseButton disabled>Disabled</BaseButton>
+</Preview>
+
+## Features ✨
+
+- **Multiple variants**: Primary, secondary, outline, ghost, etc.
+- **Full customization**: Size, color, radius, and more
+- **Interactive states**: Hover, active, focus, and disabled
+- **Accessible**: Proper ARIA attributes and keyboard navigation
+- **Extensible**: Can be used as a base for more specialized buttons
+

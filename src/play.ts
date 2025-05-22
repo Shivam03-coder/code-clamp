@@ -1,8 +1,8 @@
 import {
-  CircleSpinner,
-  DotSpinner,
-  ProgressSpinner,
-  PulseSpinner,
-  SpinnerGroup,
-  WaveSpinner,
-} from "@/components/code-clamp/spinner/index";
+  BaseButton,
+  BounceButton,
+  GlowButton,
+  MagneticButton,
+  PulseButton,
+  RippleButton,
+} from "@/components/code-clamp/button/index";

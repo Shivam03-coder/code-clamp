@@ -31,6 +31,13 @@
     "components/wave-spinner",
     "components/pulse-spinner",
     "components/progress-spinner",
-    "components/dot-spinner"
+    "components/dot-spinner",
+    "---Buttons---",
+    "components/base-button",
+    "components/bounce-button",
+    "components/glow-button",
+    "components/magnetic-button",
+    "components/pulse-button",
+    "components/ripple-button"
   ]
 }

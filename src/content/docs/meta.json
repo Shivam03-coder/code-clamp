@@ -8,6 +8,7 @@
     "---Get Started---",
     "index",
     "---Search Bars---",
+    "components/serach-bar-index",
     "components/action-search-bar",
     "components/colorful-search-bar",
     "components/dropdown-search-bar",

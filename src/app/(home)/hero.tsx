@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { ArrowBigDown, MoveUpRight } from "lucide-react";
 import Featured from "./featured";
 import LinkButton from "@/components/ui/link-button";
+import Image from "next/image";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -49,13 +50,13 @@ const Hero = () => {
         <div className="flex items-center gap-4">
           <LinkButton
             className="rounded-md bg-white px-4 py-2 text-sm font-medium text-black shadow transition hover:bg-gray-100"
-            href="/"
+            href="/docs"
             lable="Browse Components"
             icon={MoveUpRight}
           />
           <LinkButton
             className="rounded-md bg-pink-300 px-4 py-2 text-sm font-medium text-black shadow transition hover:bg-gray-100"
-            href="/"
+            href="/docs"
             lable="Browse Templates"
             icon={MoveUpRight}
           />
@@ -65,12 +66,19 @@ const Hero = () => {
 
       <motion.div
         variants={childVariants}
-        className="flex w-full flex-col items-start space-y-8 text-left lg:w-[45%]"
+        className="relative flex w-full flex-col items-start space-y-8 text-left lg:w-[45%]"
       >
-        <p className="text-lg leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eius,
-          unde laborum minima ullam autem recusandae...
-        </p>
+      <div className="relative p-[3px] rounded-2xl bg-gradient-to-tr from-pink-400 via-teal-300 to-orange-300">
+  <div className="flex flex-col items-center justify-center space-y-4 rounded-2xl bg-black p-6">
+    <Image src="/1.png" alt="cardui" height={600} width={600} />
+    <h1 className="text-5xl font-poppins text-center">
+      <span className="text-pink-300">BUILD</span>,
+      <span className="text-teal-300"> CRAZY</span>,
+      <span className="text-orange-300"> CRAZY</span>
+    </h1>
+  </div>
+</div>
+
       </motion.div>
     </motion.div>
   );

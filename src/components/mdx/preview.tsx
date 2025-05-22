@@ -14,7 +14,7 @@ interface PreviewProps {
   isBlock?: boolean;
 }
 
-const prePath = "https://code-clamp.vercel.app";
+const prePath = process.env.NEXT_PUBLIC_DEPLOYED_APP_URL as string;
 
 export function Preview({
   children,

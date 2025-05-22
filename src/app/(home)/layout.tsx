@@ -2,6 +2,7 @@ import AnnouncementBanner from "@/components/global/sticky-banner";
 import { generateMetadata } from "@/lib/meta-data";
 import React from "react";
 import Header from "./header";
+import Footer from "./footer";
 
 export const metadata = generateMetadata({
   title: "Home",
@@ -15,6 +16,7 @@ const HomeLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       <AnnouncementBanner />
       <Header />
       {children}
+      <Footer  />
     </div>
   );
 };

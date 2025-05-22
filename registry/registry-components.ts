@@ -110,13 +110,87 @@ export const component: Registry = [
     ],
   },
   {
-    name: "slide-dialog",
+    name: "glow-button",
     type: "registry:component",
     dependencies: ["lucide-react", "framer-motion"],
     registryDependencies: ["dialog"],
     files: [
       {
-        path: "components/code-clamp/dialog/slide-dialog.tsx",
+        path: "components/code-clamp/button/glow-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+
+  // button
+    {
+    name: "base-button",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/code-clamp/button/base-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+    {
+    name: "bounce-button",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/code-clamp/button/bounce-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+    {
+    name: "glow-button",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/code-clamp/button/glow-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+    {
+    name: "magnetic-button",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/code-clamp/button/magnetic-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+    {
+    name: "pulse-button",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/code-clamp/button/pulse-button.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+    {
+    name: "ripple-button",
+    type: "registry:component",
+    dependencies: ["lucide-react", "framer-motion"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/code-clamp/button/ripple-button.tsx",
         type: "registry:component",
       },
     ],

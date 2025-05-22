@@ -1,0 +1,19 @@
+{
+  "name": "magnetic-button",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, useMotionValue, useSpring } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\n\nexport interface MagneticButtonProps\n  extends React.ComponentProps<typeof Button> {\n  strength?: number;\n  className?: string;\n  children: React.ReactNode;\n}\n\nconst MagneticButton = React.forwardRef<HTMLButtonElement, MagneticButtonProps>(\n  ({ strength = 20, className, children, ...props }, ref) => {\n    const buttonRef = React.useRef<HTMLDivElement>(null);\n\n    const x = useMotionValue(0);\n    const y = useMotionValue(0);\n\n    const springConfig = { damping: 15, stiffness: 150 };\n    const springX = useSpring(x, springConfig);\n    const springY = useSpring(y, springConfig);\n\n    const moveButton = (event: React.MouseEvent<HTMLDivElement>) => {\n      if (!buttonRef.current) return;\n\n      const rect = buttonRef.current.getBoundingClientRect();\n      const centerX = rect.left + rect.width / 2;\n      const centerY = rect.top + rect.height / 2;\n\n      const distanceX = event.clientX - centerX;\n      const distanceY = event.clientY - centerY;\n\n      // Calculate distance from center as a percentage of button size\n      const maxDistanceX = rect.width / 2;\n      const maxDistanceY = rect.height / 2;\n\n      // Apply strength factor\n      const moveX = (distanceX / maxDistanceX) * strength;\n      const moveY = (distanceY / maxDistanceY) * strength;\n\n      x.set(moveX);\n      y.set(moveY);\n    };\n\n    const resetButton = () => {\n      x.set(0);\n      y.set(0);\n    };\n\n    return (\n      <motion.div\n        ref={buttonRef}\n        onMouseMove={moveButton}\n        onMouseLeave={resetButton}\n        style={{ x: springX, y: springY }}\n        className=\"inline-block\"\n      >\n        <Button ref={ref} className={cn(className)} {...props}>\n          {children}\n        </Button>\n      </motion.div>\n    );\n  },\n);\n\nMagneticButton.displayName = \"MagneticButton\";\n\nexport { MagneticButton };\n",
+      "path": "/components/code-clamp/button/magnetic-button.tsx",
+      "target": "/components/code-clamp/magnetic-button.tsx"
+    }
+  ]
+}

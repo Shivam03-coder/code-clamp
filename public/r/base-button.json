@@ -1,0 +1,19 @@
+{
+  "name": "base-button",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, type MotionProps } from \"motion/react\";\nimport { Button } from \"@/components/ui/button\";\nimport { cn } from \"@/lib/utils\";\n\nexport interface AnimatedButtonProps\n  extends React.ComponentProps<typeof Button> {\n  animationProps?: MotionProps;\n  className?: string;\n  children: React.ReactNode;\n}\n\nconst BaseButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(\n  ({ animationProps, className, children, ...props }, ref) => {\n    return (\n      <motion.div\n        whileHover={{ scale: 1.02 }}\n        whileTap={{ scale: 0.98 }}\n        {...animationProps}\n      >\n        <Button ref={ref} className={cn(className)} {...props}>\n          {children}\n        </Button>\n      </motion.div>\n    );\n  },\n);\n\nBaseButton.displayName = \"BaseButton\";\n\nexport { BaseButton };\n",
+      "path": "/components/code-clamp/button/base-button.tsx",
+      "target": "/components/code-clamp/base-button.tsx"
+    }
+  ]
+}

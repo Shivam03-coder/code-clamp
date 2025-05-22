@@ -1,0 +1,19 @@
+{
+  "name": "ripple-button",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "framer-motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { motion, AnimatePresence } from \"motion/react\";\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\n\nexport interface RippleButtonProps extends React.ComponentProps<typeof Button> {\n  rippleColor?: string;\n  rippleDuration?: number;\n  rippleSize?: number;\n  className?: string;\n  children: React.ReactNode;\n}\n\nconst RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(\n  (\n    {\n      rippleColor = \"rgba(255, 255, 255, 0.7)\",\n      rippleDuration = 0.8,\n      rippleSize = 100,\n      className,\n      children,\n      ...props\n    },\n    ref,\n  ) => {\n    const [ripples, setRipples] = React.useState<\n      { id: number; x: number; y: number; size: number }[]\n    >([]);\n    const buttonRef = React.useRef<HTMLButtonElement>(null);\n    const rippleCount = React.useRef(0);\n\n    const createRipple = (event: React.MouseEvent<HTMLButtonElement>) => {\n      if (!buttonRef.current) return;\n\n      const button = buttonRef.current;\n      const rect = button.getBoundingClientRect();\n\n      const x = event.clientX - rect.left;\n      const y = event.clientY - rect.top;\n\n      const size = Math.max(rect.width, rect.height) * (rippleSize / 100);\n\n      const newRipple = {\n        id: rippleCount.current,\n        x,\n        y,\n        size,\n      };\n\n      rippleCount.current += 1;\n      setRipples((prevRipples) => [...prevRipples, newRipple]);\n\n      setTimeout(() => {\n        setRipples((prevRipples) =>\n          prevRipples.filter((ripple) => ripple.id !== newRipple.id),\n        );\n      }, rippleDuration * 1000);\n    };\n\n    return (\n      <Button\n        ref={(node) => {\n          // @ts-ignore\n          buttonRef.current = node;\n          if (typeof ref === \"function\") {\n            ref(node);\n          } else if (ref) {\n            ref.current = node;\n          }\n        }}\n        className={cn(\"relative overflow-hidden\", className)}\n        onClick={createRipple}\n        {...props}\n      >\n        <AnimatePresence>\n          {ripples.map((ripple) => (\n            <motion.span\n              key={ripple.id}\n              className=\"absolute rounded-full\"\n              style={{\n                backgroundColor: rippleColor,\n                width: ripple.size,\n                height: ripple.size,\n                top: ripple.y - ripple.size / 2,\n                left: ripple.x - ripple.size / 2,\n              }}\n              initial={{ opacity: 0.7, scale: 0 }}\n              animate={{ opacity: 0, scale: 2 }}\n              exit={{ opacity: 0 }}\n              transition={{ duration: rippleDuration }}\n            />\n          ))}\n        </AnimatePresence>\n        <span className=\"relative z-10\">{children}</span>\n      </Button>\n    );\n  },\n);\n\nRippleButton.displayName = \"RippleButton\";\n\nexport { RippleButton };\n",
+      "path": "/components/code-clamp/button/ripple-button.tsx",
+      "target": "/components/code-clamp/ripple-button.tsx"
+    }
+  ]
+}

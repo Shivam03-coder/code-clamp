@@ -1,4 +1,3 @@
-// app/api/send-email/route.ts
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -10,8 +9,8 @@ export async function POST(req: Request) {
     port: 587,
     secure: false,
     auth: {
-      user: process.env.NEXT_PUBLIC_AUTH_EMAIL!,
-      pass: process.env.NEXT_PUBLIC_AUTH_PASS!,
+      user: process.env.AUTH_EMAIL!,
+      pass: process.env.AUTH_PASS!,
     },
   });
 

@@ -17,21 +17,21 @@ const Footer: React.FC = () => {
               A premium UI component library designed for developers who value precision, power, and purpose.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/Shivam03-coder" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://x.com/ShivamA02580516" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/shivam-anand-developer/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:shivam850anand@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold mb-4">Resources</h4>
             <ul className="space-y-2">
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">GitHub Repository</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold mb-4">Company</h4>
             <ul className="space-y-2">
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Partners</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-bold mb-4">Legal</h4>
             <ul className="space-y-2">
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-8 mt-8 text-center flex flex-col items-center">
           <p className="text-gray-500 mb-4">
             © {new Date().getFullYear()} Code-Clamp. All rights reserved.

@@ -33,7 +33,7 @@ const Hero = () => {
     >
       <motion.div
         variants={childVariants}
-        className="flex w-full flex-col items-start space-y-6 rounded-xl p-6 text-left text-white shadow-lg lg:w-[45%]"
+        className="order-2 flex w-full flex-col items-start space-y-6 rounded-xl p-6 text-left text-white shadow-lg lg:order-1 lg:w-[45%]"
       >
         <h1 className="text-6xl leading-snug font-bold">
           Craft With
@@ -54,31 +54,37 @@ const Hero = () => {
             lable="Browse Components"
             icon={MoveUpRight}
           />
-          <LinkButton
-            className="rounded-md bg-pink-300 px-4 py-2 text-sm font-medium text-black shadow transition hover:bg-gray-100"
-            href="/docs"
-            lable="Browse Templates"
-            icon={MoveUpRight}
-          />
         </div>
         <Featured />
       </motion.div>
 
       <motion.div
         variants={childVariants}
-        className="relative flex w-full flex-col items-start space-y-8 text-left lg:w-[45%]"
+        className="relative order-1 flex w-full flex-col items-start space-y-8 text-left lg:order-2 lg:w-[45%]"
       >
-      <div className="relative p-[3px] rounded-2xl bg-gradient-to-tr from-pink-400 via-teal-300 to-orange-300">
-  <div className="flex flex-col items-center justify-center space-y-4 rounded-2xl bg-black p-6">
-    <Image src="/1.png" alt="cardui" height={600} width={600} />
-    <h1 className="text-5xl font-poppins text-center">
-      <span className="text-pink-300">BUILD</span>,
-      <span className="text-teal-300"> CRAZY</span>,
-      <span className="text-orange-300"> CRAZY</span>
-    </h1>
-  </div>
-</div>
+        {/* Only shows gradient border on large screens */}
+        <div className="relative hidden rounded-2xl bg-gradient-to-tr from-pink-400 via-teal-300 to-orange-300 p-[3px] lg:block">
+          <div className="flex flex-col items-center justify-center space-y-4 rounded-2xl bg-black p-6">
+            <Image src="/1.png" alt="cardui" height={600} width={600} />
+            <h1 className="font-poppins text-center text-3xl lg:text-5xl">
+              <span className="text-pink-300">BUILD</span>,
+              <span className="text-teal-300"> CRAZY</span>,
+              <span className="text-orange-300"> CRAZY</span>
+            </h1>
+          </div>
+        </div>
 
+        {/* Fallback for small screens without border */}
+        <div className="lg:hidden">
+          <div className="flex flex-col items-center justify-center space-y-4 rounded-2xl bg-black p-6">
+            <Image src="/1.png" alt="cardui" height={600} width={600} />
+            <h1 className="font-poppins text-center text-3xl">
+              <span className="text-pink-300">BUILD</span>,
+              <span className="text-teal-300"> CRAZY</span>,
+              <span className="text-orange-300"> CRAZY</span>
+            </h1>
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   );

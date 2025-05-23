@@ -31,7 +31,7 @@ const Header = () => {
           </div>
           <Link
             className="border-primary flex items-center gap-x-2 rounded-full border p-2 text-sm"
-            href={"/compoents"}
+            href={"/https://github.com/Shivam03-coder/code-clamp"}
           >
             <GithubIcon className="h-5 w-5" />
           </Link>

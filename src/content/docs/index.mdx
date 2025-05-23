@@ -1,131 +1,93 @@
 ---
-title:  Installation Guide
-description: Get started with Code Clamp Ui - The Ultimate Animated Ui Component Library
-icon: Rocket
+title: Welcome to CodeClamp UI
+description: The ultimate animated UI component library for modern web applications
+icon: Sparkles
 color: purple
 ---
 
-# Why Choose CodeSnippetUI?
-
-✅ *Stunning UI Components – Pre-built, customizable, and responsive.  
-⚡ Blazing Fast – Optimized for performance.  
-🎨 Beautiful Design – Elegant, modern, and developer-friendly.  
-🔌 Easy Integration – Works seamlessly with React, Vue, and more!
-
-
-# Getting Started with Code-Clamp Ui
-
-### 1. Install Essential Utilities
-
-
-All components are powered by [Tailwind CSS v4](https://tailwindcss.com/docs/installation) and use the handy `cn` utility function. Install with:
-
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://ui.codesnipet.dev/r/utils.json 
-```
- 
-```bash tab="npx"
-npx shadcn@latest add https://ui.codesnipet.dev/r/utils.json
-```
-
-```bash tab="pnpm"
-pnpm dlx shadcn@latest add https://codesnippetui/r/utils.json
-```
-
-</Tabs>
-
-### 2. That's it 🎉
-
-We use [lucide-icons](https://lucide.dev/guide/installation) for most components that include icons, along with some [shadcn/ui](https://ui.shadcn.com/) components. These dependencies will be automatically installed when using the CLI.
-
-For exemple to add `card-05` to your project, it will be easy as:
-
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://ui.codesnipet.dev/r/card-05.json
-```
- 
-```bash tab="npx"
-npx shadcn@latest add https://ui.codesnipet.dev/r/card-05.json
-```
-
-```bash tab="pnpm"
-pnpm dlx shadcn@latest add https://ui.codesnipet.dev/r/card-05.json
-```
-
-</Tabs>
-
-_While we provide a convenient 'copy' button for the code, we strongly recommend using the CLI for installing components, as it ensures all necessary files are included._
-
-Add to your page and it works!
-
-```jsx
-import Card05 from "@/components/codesnippetui/card-05";
-
-export default function Page() {
-    return <Card05 />;
-}
-```
-
+import { Callout } from "fumadocs-ui/components/callout";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-### 3. Blocks
 
-Blocks are a set of components to make a complete blocks, they contain multiples files. To install them it is mandatory to use the `cli`. For example it you'd like to install `ai-card-generation` block:
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+  <div className="flex flex-col space-y-2">
+    <div className="flex items-center space-x-2">
+      <div className="rounded-full bg-green-100 dark:bg-green-900/30 p-1">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-green-600">
+          <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <span className="font-medium">Stunning UI Components</span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-400 pl-7">Pre-built, customizable, and responsive designs ready for production</p>
+  </div>
+  
+  <div className="flex flex-col space-y-2">
+    <div className="flex items-center space-x-2">
+      <div className="rounded-full bg-yellow-100 dark:bg-yellow-900/30 p-1">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-yellow-600">
+          <path d="M8.00008 2.66669V13.3334M8.00008 2.66669L4.00008 6.66669M8.00008 2.66669L12.0001 6.66669" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <span className="font-medium">Blazing Fast</span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-400 pl-7">Optimized for performance with smooth 60fps animations</p>
+  </div>
+  
+  <div className="flex flex-col space-y-2">
+    <div className="flex items-center space-x-2">
+      <div className="rounded-full bg-blue-100 dark:bg-blue-900/30 p-1">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-blue-600">
+          <path d="M8.00008 1.33331L10.0601 5.50665L14.6667 6.18665L11.3334 9.42665L12.1201 14.0133L8.00008 11.8466L3.88008 14.0133L4.66675 9.42665L1.33341 6.18665L5.94008 5.50665L8.00008 1.33331Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <span className="font-medium">Beautiful Design</span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-400 pl-7">Elegant, modern interfaces that delight users and developers alike</p>
+  </div>
+  
+  <div className="flex flex-col space-y-2">
+    <div className="flex items-center space-x-2">
+      <div className="rounded-full bg-red-100 dark:bg-red-900/30 p-1">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-red-600">
+          <path d="M6.66675 8.66669L2.00008 13.3334M2.00008 8.66669L6.66675 13.3334M14.0001 8.66669C14.0001 11.6122 11.6122 14.0001 8.66675 14.0001M9.33341 2.66669C9.33341 2.66669 11.3334 4.00002 11.3334 8.66669C11.3334 10.1394 10.8068 11.4697 9.94236 12.4805" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <span className="font-medium">Easy Integration</span>
+    </div>
+    <p className="text-gray-600 dark:text-gray-400 pl-7">Works seamlessly with React, Vue, and other modern frameworks</p>
+  </div>
+</div>
 
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://ui.codesnipet.dev/r/ai-card-generation.json
-```
- 
-```bash tab="npx"
-npx shadcn@latest add https://ui.codesnipet.dev/r/ai-card-generation.json
-```
+<Callout>
+  <strong>Our Philosophy:</strong> Components should adapt to your workflow, not the other way around. Every element is designed with motion in mind from day one.
+</Callout>
 
-```bash tab="pnpm"
-pnpm dlx shadcn@latest add https://ui.codesnipet.dev/r/ai-card-generation.json
-```
+## The Animation-First Approach
 
-</Tabs>
+Unlike traditional libraries that add animations as an afterthought, CodeClamp UI is built with motion as a core principle. Every component is designed to provide meaningful, purposeful animations that enhance user experience.
 
-Then, add to your page and it works!
+<div className="my-8 overflow-hidden rounded-lg border bg-background">
+  <div className="flex border-b">
+    <div className="flex h-10 items-center justify-center border-r px-4 text-sm">
+      <span className="text-muted-foreground">Preview</span>
+    </div>
+  </div>
+  <div className="p-6 flex justify-center">
+    <div className="w-full max-w-md p-4 border rounded-lg shadow-lg bg-white dark:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-medium">Animation Example</h3>
+        <div className="rounded-full bg-purple-100 dark:bg-purple-900/30 p-1">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-purple-600">
+            <path d="M8 3.33331V12.6666M8 12.6666L12.6667 7.99998M8 12.6666L3.33333 7.99998" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <p className="text-gray-600 dark:text-gray-400">Hover over this card to see the animation effect in action.</p>
+    </div>
+  </div>
+</div>
 
-```jsx
-/**
- * AICardGeneration require 5 additional components
- * that will be automatically installed with the CLI.
- */
-import AICardGeneration from "@/components/codesnippetui/AICardGeneration";
+## Getting Started in Seconds
 
-export default function Page() {
-    return <AICardGeneration />;
-}
-```
-
-### 4. Optionnal dependencies
-
-Some components require additional libraries, listed at the bottom of each components. Make sure to install them to ensure the component works properly.
-
-### 5. Monorepo
-
-For monorepo `shadcn/ui` CLI contain the options `-c` to the path to your workspace for exemple:
-
-<Tabs items={["bun", "npx", "pnpm"]}>
- 
-```bash tab="bun"
-bunx shadcn@latest add https://ui.codesnipet.dev/r/card-05.json -c ./apps/www
-```
- 
-```bash tab="npx"
-npx shadcn@latest add https://ui.codesnipet.dev/r/card-05.json -c ./apps/www
-```
-
-```bash tab="pnpm"
-pnpm dlx shadcn@latest add https://ui.codesnipet.dev/r/card-05.json -c ./apps/www
-```
-
-</Tabs>
+CodeClamp UI uses the power of shadcn's CLI to make installation a breeze. No more dependency hell or configuration nightmares.

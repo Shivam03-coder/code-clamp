@@ -63,10 +63,10 @@ const Hero = () => {
         className="relative order-1 flex w-full flex-col items-start space-y-8 text-left lg:order-2 lg:w-[45%]"
       >
         {/* Only shows gradient border on large screens */}
-        <div className="relative hidden rounded-2xl bg-gradient-to-tr from-pink-400 via-teal-300 to-orange-300 p-[3px] lg:block">
+        <div className="relative hidden rounded-2xl bg-gradient-to-tr  p-[3px] lg:block">
           <div className="flex flex-col items-center justify-center space-y-4 rounded-2xl bg-black p-6">
             <Image src="/1.png" alt="cardui" height={600} width={600} />
-            <h1 className="font-poppins text-center text-3xl lg:text-5xl">
+            <h1 className="font-mulish lg:whitespace-nowrap text-center text-3xl lg:text-5xl">
               <span className="text-pink-300">BUILD</span>,
               <span className="text-teal-300"> CRAZY</span>,
               <span className="text-orange-300"> CRAZY</span>

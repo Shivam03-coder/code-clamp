@@ -11,6 +11,34 @@ export const metadata: Metadata = {
   title: "Code-Clamp | Modern UI Component Library",
   description:
     "Code-Clamp is a sleek, accessible, and developer-friendly UI component library built for modern web applications using React and Tailwind CSS.",
+  icons: {
+    icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Code-Clamp | Modern UI Component Library",
+    description:
+      "Sleek, accessible, and developer-friendly UI components for modern React apps.",
+    url: "https://yourdomain.com",
+    siteName: "Code-Clamp",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
+        alt: "Code-Clamp Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Code-Clamp | Modern UI Component Library",
+    description:
+      "Build sleek and modern interfaces with accessible React components.",
+    images: ["/favicon.png"],
+    creator: "@yourTwitterHandle",
+  },
 };
 
 export default function RootLayout({
